@@ -69,12 +69,12 @@
     <None Include="xUnitRevit.addin" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\xunit.runner.wpf\xunit.runner.wpf\xunit.runner.wpf.csproj">
+    <ProjectReference Include="..\xunit.runner.wpf\xunit.runner.wpf\xunit.runner.wpf.csproj">
       <Project>{4120f4ac-1b24-4b7c-86a9-0a3c75e526cd}</Project>
       <Name>xunit.runner.wpf</Name>
     </ProjectReference>
     <ProjectReference Include="..\xUnitRevitUtils\xUnitRevitUtils.csproj">
-      <Project>{9406d1d6-0751-4f22-9a0e-87acfbe17365}</Project>
+      <Project>{06eaeff6-4704-40b4-b42a-d8a46eedd6f0}</Project>
       <Name>xUnitRevitUtils</Name>
     </ProjectReference>
   </ItemGroup>
