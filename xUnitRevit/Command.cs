@@ -29,7 +29,7 @@ namespace xUnitRevit
       ElementSet elements)
     {
       UIApplication uiapp = commandData.Application;
-      TestRunner.Launch(uiapp);
+      Runner.Launch(uiapp);
       return Result.Succeeded;
 
 

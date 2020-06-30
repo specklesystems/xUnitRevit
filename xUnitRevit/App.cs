@@ -26,10 +26,10 @@ namespace xUnitRevit
       Application app = sender as Application;
       UIApplication uiapp = new UIApplication(app);
 
-      
+      Runner.ReadConfig();
 
-      // uiapp.OpenAndActivateDocument(@"C:\Code\Speckle-Next\SpeckleKitRevit\TestModels\Walls.rvt");
-      TestRunner.Launch(uiapp);
+      if(Runner.Config.autoStart)
+        Runner.Launch(uiapp);
     }
 
 
