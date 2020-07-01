@@ -7,7 +7,7 @@
     <PackageTags>xunit revit runner</PackageTags>
     <Authors>Speckle</Authors>
     <Company>Speckle</Company>
-    <Description>xUnit runner for Revit</Description>
+    <Description>xUnit runner utilities for Revit 2021</Description>
     <PackageIconUrl>https://avatars2.githubusercontent.com/u/2092016</PackageIconUrl>
     <PackageIcon>xunit.png</PackageIcon>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
