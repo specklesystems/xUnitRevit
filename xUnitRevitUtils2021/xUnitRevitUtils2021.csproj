@@ -12,6 +12,9 @@
     <PackageIcon>xunit.png</PackageIcon>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <AssemblyName>xUnitRevitUtils</AssemblyName>
+    <RootNamespace>xUnitRevitUtils</RootNamespace>
+    <PackageId>xUnitRevitUtils.2021</PackageId>
   </PropertyGroup>
 
   <ItemGroup>

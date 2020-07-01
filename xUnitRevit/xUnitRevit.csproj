@@ -1,6 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="..\packages\xunit.core.2.4.1\build\xunit.core.props" Condition="Exists('..\packages\xunit.core.2.4.1\build\xunit.core.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <ResolveAssemblyWarnOrErrorOnTargetArchitectureMismatch>
@@ -21,7 +20,9 @@
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+  <!-- MULTI VERSION CONFIGURATION START -->
+  <!--2021-->
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug2021|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -33,7 +34,7 @@
     <StartProgram>$(ProgramW6432)\Autodesk\Revit 2021\Revit.exe</StartProgram>
     <RevitVersion>2021</RevitVersion>
   </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release2021|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -44,76 +45,62 @@
     <StartProgram>$(ProgramW6432)\Autodesk\Revit 2021\Revit.exe</StartProgram>
     <RevitVersion>2021</RevitVersion>
   </PropertyGroup>
+  <!--2020-->
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug2020|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <StartAction>Program</StartAction>
+    <StartProgram>$(ProgramW6432)\Autodesk\Revit 2020\Revit.exe</StartProgram>
+    <RevitVersion>2020</RevitVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release2020|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <StartAction>Program</StartAction>
+    <StartProgram>$(ProgramW6432)\Autodesk\Revit 2020\Revit.exe</StartProgram>
+    <RevitVersion>2020</RevitVersion>
+  </PropertyGroup>
+  <!--2019-->
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug2019|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <StartAction>Program</StartAction>
+    <StartProgram>$(ProgramW6432)\Autodesk\Revit 2019\Revit.exe</StartProgram>
+    <RevitVersion>2019</RevitVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release2019|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <StartAction>Program</StartAction>
+    <StartProgram>$(ProgramW6432)\Autodesk\Revit 2019\Revit.exe</StartProgram>
+    <RevitVersion>2019</RevitVersion>
+  </PropertyGroup>
+  <!--END-->
   <ItemGroup>
-    <Reference Include="AdWindows, Version=3.0.4.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\ModPlus.Revit.API.2021.1.0.0\lib\AdWindows.dll</HintPath>
-    </Reference>
-    <Reference Include="CommonServiceLocator, Version=2.0.2.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
-      <HintPath>..\packages\CommonServiceLocator.2.0.2\lib\net47\CommonServiceLocator.dll</HintPath>
-    </Reference>
-    <Reference Include="GalaSoft.MvvmLight, Version=5.4.1.0, Culture=neutral, PublicKeyToken=e7570ab207bcb616, processorArchitecture=MSIL">
-      <HintPath>..\packages\MvvmLightLibs.5.4.1.1\lib\net45\GalaSoft.MvvmLight.dll</HintPath>
-    </Reference>
-    <Reference Include="GalaSoft.MvvmLight.Extras, Version=5.4.1.0, Culture=neutral, PublicKeyToken=669f0b5e8f868abf, processorArchitecture=MSIL">
-      <HintPath>..\packages\MvvmLightLibs.5.4.1.1\lib\net45\GalaSoft.MvvmLight.Extras.dll</HintPath>
-    </Reference>
-    <Reference Include="GalaSoft.MvvmLight.Platform, Version=5.4.1.0, Culture=neutral, PublicKeyToken=5f873c45e98af8a1, processorArchitecture=MSIL">
-      <HintPath>..\packages\MvvmLightLibs.5.4.1.1\lib\net45\GalaSoft.MvvmLight.Platform.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.WindowsAPICodePack, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\WindowsAPICodePack-Core.1.1.1\lib\Microsoft.WindowsAPICodePack.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.WindowsAPICodePack.Shell, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\WindowsAPICodePack-Shell.1.1.1\lib\Microsoft.WindowsAPICodePack.Shell.dll</HintPath>
-    </Reference>
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
-    <Reference Include="RevitAPI, Version=21.0.0.0, Culture=neutral, processorArchitecture=AMD64">
-      <HintPath>..\packages\ModPlus.Revit.API.2021.1.0.0\lib\RevitAPI.dll</HintPath>
-    </Reference>
-    <Reference Include="RevitAPIUI, Version=21.0.0.0, Culture=neutral, processorArchitecture=AMD64">
-      <HintPath>..\packages\ModPlus.Revit.API.2021.1.0.0\lib\RevitAPIUI.dll</HintPath>
-    </Reference>
-    <Reference Include="speckle.xunit.runner.wpf, Version=1.0.3.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\speckle.xunit.runner.wpf.1.0.3\lib\net48\speckle.xunit.runner.wpf.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
-    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Collections.Immutable, Version=1.2.5.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.Collections.Immutable.1.7.1\lib\net461\System.Collections.Immutable.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.Memory.4.5.4\lib\net461\System.Memory.dll</HintPath>
-    </Reference>
     <Reference Include="System.Numerics" />
-    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.4.1, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.4.5.3\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
-    </Reference>
     <Reference Include="System.Web.Extensions" />
-    <Reference Include="System.Windows.Interactivity, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\MvvmLightLibs.5.4.1.1\lib\net45\System.Windows.Interactivity.dll</HintPath>
-    </Reference>
     <Reference Include="WindowsBase" />
-    <Reference Include="xunit.abstractions, Version=2.0.0.0, Culture=neutral, PublicKeyToken=8d05b1bb7a6fdb6c, processorArchitecture=MSIL">
-      <HintPath>..\packages\xunit.abstractions.2.0.3\lib\net35\xunit.abstractions.dll</HintPath>
-    </Reference>
-    <Reference Include="xunit.assert, Version=2.4.1.0, Culture=neutral, PublicKeyToken=8d05b1bb7a6fdb6c, processorArchitecture=MSIL">
-      <HintPath>..\packages\xunit.assert.2.4.1\lib\netstandard1.1\xunit.assert.dll</HintPath>
-    </Reference>
-    <Reference Include="xunit.core, Version=2.4.1.0, Culture=neutral, PublicKeyToken=8d05b1bb7a6fdb6c, processorArchitecture=MSIL">
-      <HintPath>..\packages\xunit.extensibility.core.2.4.1\lib\net452\xunit.core.dll</HintPath>
-    </Reference>
-    <Reference Include="xunit.execution.desktop, Version=2.4.1.0, Culture=neutral, PublicKeyToken=8d05b1bb7a6fdb6c, processorArchitecture=MSIL">
-      <HintPath>..\packages\xunit.extensibility.execution.2.4.1\lib\net452\xunit.execution.desktop.dll</HintPath>
-    </Reference>
-    <Reference Include="xunit.runner.utility.net452, Version=2.4.1.0, Culture=neutral, PublicKeyToken=8d05b1bb7a6fdb6c, processorArchitecture=MSIL">
-      <HintPath>..\packages\xunit.runner.utility.2.4.1\lib\net452\xunit.runner.utility.net452.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App.cs" />
@@ -129,41 +116,89 @@
     <None Include="config.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="packages.config" />
     <None Include="xUnitRevit.addin" />
   </ItemGroup>
+  <!-- SWITCH REVIT NUGETS -->
+  <Choose>
+    <When Condition="'$(Configuration)' == 'Debug2019' Or '$(Configuration)' == 'Release2019'">
+      <ItemGroup>
+        <PackageReference Include="ModPlus.Revit.API.2019">
+          <Version>1.0.0</Version>
+          <ExcludeAssets>runtime</ExcludeAssets>
+        </PackageReference>
+      </ItemGroup>
+      <ItemGroup>
+        <ProjectReference Include="..\xUnitRevitUtils2019\xUnitRevitUtils2019.csproj">
+          <Project>{02399359-9CA0-4B47-B467-541E290E700F}</Project>
+          <Name>xUnitRevitUtils2019</Name>
+        </ProjectReference>
+      </ItemGroup>
+    </When>
+    <When Condition="'$(Configuration)' == 'Debug2020' Or '$(Configuration)' == 'Release2020'">
+      <ItemGroup>
+        <PackageReference Include="ModPlus.Revit.API.2020">
+          <Version>1.0.0</Version>
+          <ExcludeAssets>runtime</ExcludeAssets>
+        </PackageReference>
+      </ItemGroup>
+      <ItemGroup>
+        <ProjectReference Include="..\xUnitRevitUtils2020\xUnitRevitUtils2020.csproj">
+          <Project>{0DEF0F23-8AE2-461B-B014-8A0DA7494088}</Project>
+          <Name>xUnitRevitUtils2020</Name>
+        </ProjectReference>
+      </ItemGroup>
+    </When>
+    <When Condition="'$(Configuration)' == 'Debug2021' Or '$(Configuration)' == 'Release2021'">
+      <ItemGroup>
+        <PackageReference Include="ModPlus.Revit.API.2021">
+          <Version>1.0.0</Version>
+          <ExcludeAssets>runtime</ExcludeAssets>
+        </PackageReference>
+      </ItemGroup>
+      <ItemGroup>
+        <ProjectReference Include="..\xUnitRevitUtils2021\xUnitRevitUtils2021.csproj">
+          <Project>{977e0b63-5706-4c2b-9c01-3c02d9ebe377}</Project>
+          <Name>xUnitRevitUtils2021</Name>
+        </ProjectReference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <!--END-->
   <ItemGroup>
-    <ProjectReference Include="..\xUnitRevitUtils\xUnitRevitUtils.csproj">
-      <Project>{06eaeff6-4704-40b4-b42a-d8a46eedd6f0}</Project>
-      <Name>xUnitRevitUtils</Name>
-    </ProjectReference>
+    <PackageReference Include="MvvmLight">
+      <Version>5.4.1.1</Version>
+    </PackageReference>
+    <PackageReference Include="speckle.xunit.runner.wpf">
+      <Version>1.0.3</Version>
+    </PackageReference>
   </ItemGroup>
-  <ItemGroup>
-    <Analyzer Include="..\packages\xunit.analyzers.0.10.0\analyzers\dotnet\cs\xunit.analyzers.dll" />
-  </ItemGroup>
+
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PostBuildEvent>
     </PostBuildEvent>
   </PropertyGroup>
+  <!-- MULTIVERSION POST BUILD EVENTS START -->
   <Target Name="AfterBuild">
+    <CallTarget Condition="'$(Configuration)' == 'Debug2021' Or '$(Configuration)' == 'Debug2020' Or '$(Configuration)' == 'Debug2019'" Targets="AfterBuildDebug"/>
+    <CallTarget Condition="'$(Configuration)' == 'Release2021' Or '$(Configuration)' == 'Release2020' Or '$(Configuration)' == 'Release2019'" Targets="AfterBuildRelease"/>
+  </Target>
+  <Target Name="AfterBuildDebug">
     <ItemGroup>
-      <SourceDLLs Include="$(TargetDir)\**\*.*" />
-      <SourceManifest Include="$(ProjectDir)*.addin" />
+      <SourceDLLs Include="$(TargetDir)\**\*.*"/>
+      <SourceManifest Include="$(ProjectDir)*.addin"/>
     </ItemGroup>
-    <Copy DestinationFolder="$(AppData)\Autodesk\REVIT\Addins\$(RevitVersion)\$(ProjectName)\%(RecursiveDir)" SourceFiles="@(SourceDLLs)" />
-    <Copy DestinationFolder="$(AppData)\Autodesk\REVIT\Addins\$(RevitVersion)\" SourceFiles="@(SourceManifest)" />
+    <Copy DestinationFolder="$(AppData)\Autodesk\REVIT\Addins\$(RevitVersion)\$(ProjectName)\%(RecursiveDir)" SourceFiles="@(SourceDLLs)"/>
+    <Copy DestinationFolder="$(AppData)\Autodesk\REVIT\Addins\$(RevitVersion)\" SourceFiles="@(SourceManifest)"/>
   </Target>
-  <Target Name="AfterClean">
-    <Delete Files="$(AppData)\Autodesk\REVIT\Addins\2021\SpeckleRevitTests.addin" />
-    <Delete Files="$(AppData)\Autodesk\REVIT\Addins\2021\SpeckleRevitTests.dll" />
+  <Target Name="AfterBuildRelease">
+    <ItemGroup>
+      <SourceDLLs Include="$(TargetDir)\**\*.*"/>
+      <SourceManifest Include="$(ProjectDir)*.addin"/>
+    </ItemGroup>
+    <Message Importance="High" Text="RELEASE copy from $(TargetDir) to $(SolutionDir)\Release\Release$(RevitVersion)\$(ProjectName)\"/>
+    <Copy DestinationFolder="$(SolutionDir)\Release\Release$(RevitVersion)\$(ProjectName)\%(RecursiveDir)" SourceFiles="@(SourceDLLs)"/>
+    <Copy DestinationFolder="$(SolutionDir)\Release\Release$(RevitVersion)\" SourceFiles="@(SourceManifest)"/>
   </Target>
-  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
-    <PropertyGroup>
-      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
-    </PropertyGroup>
-    <Error Condition="!Exists('..\packages\xunit.core.2.4.1\build\xunit.core.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\xunit.core.2.4.1\build\xunit.core.props'))" />
-    <Error Condition="!Exists('..\packages\xunit.core.2.4.1\build\xunit.core.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\xunit.core.2.4.1\build\xunit.core.targets'))" />
-  </Target>
-  <Import Project="..\packages\xunit.core.2.4.1\build\xunit.core.targets" Condition="Exists('..\packages\xunit.core.2.4.1\build\xunit.core.targets')" />
+  <!--END-->
 </Project>

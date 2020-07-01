@@ -13,9 +13,7 @@ namespace xUnitRevit
   {
     public Result OnStartup(UIControlledApplication a)
     {
-#if DEBUG
       a.ControlledApplication.ApplicationInitialized += ControlledApplication_ApplicationInitialized; ;
-#endif
 
       return Result.Succeeded;
     }

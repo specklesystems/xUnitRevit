@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package >
+  <metadata>
+    <id>$id$</id>
+    <version>$version$</version>
+    <title>$title$</title>
+    <authors>$author$</authors>
+    <owners>$author$</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <license type="expression">MIT</license>
+    <projectUrl>https://github.com/Speckle-Next/xunit-Revit</projectUrl>
+    <iconUrl>https://avatars2.githubusercontent.com/u/2092016</iconUrl>
+    <description>$description$</description>
+    <releaseNotes></releaseNotes>
+    <copyright>Copyright 2020</copyright>
+    <tags>xunit revit</tags>
+    <dependencies>
+      <dependency id="ModPlus.Revit.API.2019" version="1.0.0"  />
+      <dependency id="xunit" version="2.4.1" />
+    </dependencies>
+  </metadata>
+</package>
