@@ -9,6 +9,9 @@
     <Company>Speckle</Company>
     <Description>xUnit runner for Revit</Description>
     <PackageIconUrl>https://avatars2.githubusercontent.com/u/2092016</PackageIconUrl>
+    <PackageIcon>xunit.png</PackageIcon>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
   </PropertyGroup>
 
   <ItemGroup>
