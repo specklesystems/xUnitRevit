@@ -35,7 +35,7 @@ steps:
 - task: NuGetCommand@2
   inputs:
     command: 'pack'
-    packagesToPack: '**/xUnitRevitUtils.csproj'
+    packagesToPack: '**/xUnitRevitUtils*.csproj'
     versioningScheme: 'off'
 - task: PublishBuildArtifacts@1
   inputs:
