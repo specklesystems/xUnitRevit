@@ -54,6 +54,9 @@
       <HintPath>$(ProgramW6432)\Autodesk\Revit 2021\RevitAPIUI.dll</HintPath>
       <Private>False</Private>
     </Reference>
+    <Reference Include="speckle.xunit.runner.wpf, Version=1.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\speckle.xunit.runner.wpf.1.0.1\lib\net48\speckle.xunit.runner.wpf.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Web.Extensions" />
     <Reference Include="WindowsBase" />
@@ -72,13 +75,10 @@
     <None Include="config.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Include="packages.config" />
     <None Include="xUnitRevit.addin" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\xunit.runner.wpf\xunit.runner.wpf\xunit.runner.wpf.csproj">
-      <Project>{4120f4ac-1b24-4b7c-86a9-0a3c75e526cd}</Project>
-      <Name>xunit.runner.wpf</Name>
-    </ProjectReference>
     <ProjectReference Include="..\xUnitRevitUtils\xUnitRevitUtils.csproj">
       <Project>{06eaeff6-4704-40b4-b42a-d8a46eedd6f0}</Project>
       <Name>xUnitRevitUtils</Name>

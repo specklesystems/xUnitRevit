@@ -14,6 +14,9 @@ using System.IO;
 
 namespace xUnitRevit
 {
+  /// <summary>
+  /// Responsible for launching the xUnit WPF interface and initializing xru with Revit data
+  /// </summary>
   public static class Runner
   {
     internal static Configuration Config = new Configuration();

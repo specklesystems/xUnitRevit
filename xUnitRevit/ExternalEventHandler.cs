@@ -9,8 +9,8 @@ using System.Threading.Tasks;
 namespace xUnitRevit
 {
   /// <summary>
-  /// Speckle custom event invoker. Has a queue of actions that, in theory, this things should iterate through. 
-  /// Actions are added to the queue from the ui bindings (mostly) and then raised. 
+  /// Event invoker. Has a queue of actions that, in theory, this thing should iterate through. 
+  /// Required to run transactions form a non modal window.
   /// </summary>
   public class ExternalEventHandler : IExternalEventHandler
   {
@@ -31,7 +31,6 @@ namespace xUnitRevit
       Running = true;
 
       Queue[0]();
-
 
       Queue.RemoveAt(0);
       Running = false;

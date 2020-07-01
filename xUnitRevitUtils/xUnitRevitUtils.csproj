@@ -1,7 +1,14 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+    <PackageProjectUrl>https://github.com/Speckle-Next/xunit-Revit</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/Speckle-Next/xunit-Revit</RepositoryUrl>
+    <PackageTags>xunit revit runner</PackageTags>
+    <Authors>Speckle</Authors>
+    <Company>Speckle</Company>
+    <Description>xUnit runner for Revit</Description>
+    <PackageIconUrl>https://avatars2.githubusercontent.com/u/2092016</PackageIconUrl>
   </PropertyGroup>
 
   <ItemGroup>
