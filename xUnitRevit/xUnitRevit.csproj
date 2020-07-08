@@ -113,6 +113,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
+    <None Include="config_sample.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="config.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
@@ -169,10 +172,9 @@
       <Version>5.4.1.1</Version>
     </PackageReference>
     <PackageReference Include="speckle.xunit.runner.wpf">
-      <Version>1.0.3</Version>
+      <Version>1.0.4</Version>
     </PackageReference>
   </ItemGroup>
-
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PostBuildEvent>
@@ -180,25 +182,25 @@
   </PropertyGroup>
   <!-- MULTIVERSION POST BUILD EVENTS START -->
   <Target Name="AfterBuild">
-    <CallTarget Condition="'$(Configuration)' == 'Debug2021' Or '$(Configuration)' == 'Debug2020' Or '$(Configuration)' == 'Debug2019'" Targets="AfterBuildDebug"/>
-    <CallTarget Condition="'$(Configuration)' == 'Release2021' Or '$(Configuration)' == 'Release2020' Or '$(Configuration)' == 'Release2019'" Targets="AfterBuildRelease"/>
+    <CallTarget Condition="'$(Configuration)' == 'Debug2021' Or '$(Configuration)' == 'Debug2020' Or '$(Configuration)' == 'Debug2019'" Targets="AfterBuildDebug" />
+    <CallTarget Condition="'$(Configuration)' == 'Release2021' Or '$(Configuration)' == 'Release2020' Or '$(Configuration)' == 'Release2019'" Targets="AfterBuildRelease" />
   </Target>
   <Target Name="AfterBuildDebug">
     <ItemGroup>
-      <SourceDLLs Include="$(TargetDir)\**\*.*"/>
-      <SourceManifest Include="$(ProjectDir)*.addin"/>
+      <SourceDLLs Include="$(TargetDir)\**\*.*" />
+      <SourceManifest Include="$(ProjectDir)*.addin" />
     </ItemGroup>
-    <Copy DestinationFolder="$(AppData)\Autodesk\REVIT\Addins\$(RevitVersion)\$(ProjectName)\%(RecursiveDir)" SourceFiles="@(SourceDLLs)"/>
-    <Copy DestinationFolder="$(AppData)\Autodesk\REVIT\Addins\$(RevitVersion)\" SourceFiles="@(SourceManifest)"/>
+    <Copy DestinationFolder="$(AppData)\Autodesk\REVIT\Addins\$(RevitVersion)\$(ProjectName)\%(RecursiveDir)" SourceFiles="@(SourceDLLs)" />
+    <Copy DestinationFolder="$(AppData)\Autodesk\REVIT\Addins\$(RevitVersion)\" SourceFiles="@(SourceManifest)" />
   </Target>
   <Target Name="AfterBuildRelease">
     <ItemGroup>
-      <SourceDLLs Include="$(TargetDir)\**\*.*"/>
-      <SourceManifest Include="$(ProjectDir)*.addin"/>
+      <SourceDLLs Include="$(TargetDir)\**\*.*" />
+      <SourceManifest Include="$(ProjectDir)*.addin" />
     </ItemGroup>
-    <Message Importance="High" Text="RELEASE copy from $(TargetDir) to $(SolutionDir)\Release\Release$(RevitVersion)\$(ProjectName)\"/>
-    <Copy DestinationFolder="$(SolutionDir)\Release\Release$(RevitVersion)\$(ProjectName)\%(RecursiveDir)" SourceFiles="@(SourceDLLs)"/>
-    <Copy DestinationFolder="$(SolutionDir)\Release\Release$(RevitVersion)\" SourceFiles="@(SourceManifest)"/>
+    <Message Importance="High" Text="RELEASE copy from $(TargetDir) to $(SolutionDir)\Release\Release$(RevitVersion)\$(ProjectName)\" />
+    <Copy DestinationFolder="$(SolutionDir)\Release\Release$(RevitVersion)\$(ProjectName)\%(RecursiveDir)" SourceFiles="@(SourceDLLs)" />
+    <Copy DestinationFolder="$(SolutionDir)\Release\Release$(RevitVersion)\" SourceFiles="@(SourceManifest)" />
   </Target>
   <!--END-->
 </Project>
