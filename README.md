@@ -2,7 +2,7 @@
 
 [![Build Status](https://teocomi.visualstudio.com/Speckle/_apis/build/status/Speckle-Next.xunit-Revit?branchName=master)](https://teocomi.visualstudio.com/Speckle/_build/latest?definitionId=2&branchName=master)
 
-![image](https://user-images.githubusercontent.com/2679513/88956317-1acfaf80-d295-11ea-9741-58f2a196bdab.png)
+![xunit2](https://user-images.githubusercontent.com/2679513/88958499-77809980-d298-11ea-84b6-e0749790ffc5.gif)
 
 
 
@@ -12,14 +12,14 @@ An xUnit runner for Autodesk Revit. Read more about this tool on our blog: TODO-
 
 xUnitRevit uses [speckle.xunit.runner.wpf](https://github.com/Speckle-Next/speckle.xunit.runner.wpf) which is a fork of [xunit.runner.wpf](https://github.com/Pilchie/xunit.runner.wpf), it allows to easily develop and run xUnit tests in Revit. 
 
-Many thanks to all the developers of xunit.runner.wpf and xunit!
+Many thanks to all the developers of xunit and xunit.runner.wpf!
 
 ### Structure
 
 This repo is composed of 2 projects:
 
-- xUnitRevit: the actual Revit addin
-- xUnitRevitUtils: a utility library to help pass Revit data to the test libraries when running the tests
+- **xUnitRevit**: the actual Revit addin
+- **xUnitRevitUtils**: a utility library to help pass Revit data to the test libraries when running the tests
 
 
 
@@ -34,24 +34,13 @@ There are very few steps required to create and run your fist unit tests with xU
 
 ### Building/installing xUnitRevit
 
-After cloning this repo, all you need to do to run xUnitRevit is to build the project in **Debug mode**, by selecting the build configuration that matches you Revit version.
+After cloning this repo, all you need to do to run xUnitRevit is to build the project in **Debug mode**, by selecting the build configuration that matches your Revit version.
 
 ![image](https://user-images.githubusercontent.com/2679513/88941424-e5b96200-d280-11ea-8ef4-12fbb0ed13d2.png)
 
 **This will build the project and copy its dlls to the Revit addin folder** `%appdata%\Autodesk\Revit\Addins`.
 
 You can also, similarly, build the project in **Release mode**, and manually copy the built files from `xunit-Revit\Release`.
-
-#### Configuration
-
-We've added a couple of optional settings for lazy developers like me, to help speed up frequent testing of a test library. You'll see a `config_sample.json` in the root of the project, rename it `config.json` and set it to `copy local = true`. You'll then be able to configure
-
-- `startupAssemblies`: if set, automatically loads a set of assemblies when xUnitRevit starts
-- `autoStart`: if true, automatically opens the xUnitRevit window after Revit loads
-
-#### Dll locking
-
-Dlls loaded by xUnitRevit are loaded in Revit's AppDomain, and therefore it's not possible to recompile them until Revit is closed (even if you see an auto reload option in the UI). But don't despair, since Revit 2020 it's possible to *edit & continue* your code while debugging, so you won't have to restart Revit each time.
 
 ### Creating a test library
 
@@ -70,7 +59,7 @@ That's it, now we can start adding our tests.
 
 To do almost anything with the Revit API you need a reference to the active Document, and this is where xUnitRevitUtils comes into play, with its `xru` static class. The code below shows how we can use it to get a list of Walls and check their properties.
 
-Full code : TODO_LINK
+Full code : https://github.com/Speckle-Next/xUnitRevit/blob/master/SampleLibrary/SampleTest.cs
 
 ```csharp
   [Fact]
@@ -95,7 +84,7 @@ public void WallsHaveVolume()
 
 To be able to share context between tests, xUnits uses [fixtures](https://xunit.net/docs/shared-context). We can use fixtures for instance, to open a Revit model only once and use it across multiple tests.
 
-Let's see an example, full code: LINK_TODO
+Let's see an example, full code: https://github.com/Speckle-Next/xUnitRevit/blob/master/SampleLibrary/TestWithFixture.cs
 
 ```csharp
 public class DocFixture : IDisposable
@@ -144,7 +133,7 @@ public class TestWithFixture : IClassFixture<DocFixture>
 
 #### Writing test that use Revit transactions
 
-Another feature of xUnitRevitUtils is that it offers a helper method to run Transactions, so you don't have to worry about that 🤯! Check the example below:
+Another feature of xUnitRevitUtils is that it offers a helper method to run Transactions, so you don't have to worry about that 🤯! Check the example below: https://github.com/Speckle-Next/xUnitRevit/blob/master/SampleLibrary/TestWithFixture.cs
 
 ```csharp
 [Fact]
@@ -176,11 +165,22 @@ public void MoveWallsUp()
 
 
 
-## Final Notes
+## Additional Notes
 
-xUnitRevit was developed to help us develop a better Speckle 2.0 connector for Revit, we hope you'll find it useful too. It's been currently tailored mostly for our needs, but please do give us feedback and submit PRs!
+### Configuration
 
-### Contributing
+We've added a couple of optional settings for lazy developers like me, to help speed up frequent testing of a test library. You'll see a `config_sample.json` in the root of the project, rename it `config.json` and set it to `copy local = true`. You'll then be able to configure
+
+- `startupAssemblies`: if set, automatically loads a set of assemblies when xUnitRevit starts
+- `autoStart`: if true, automatically opens the xUnitRevit window after Revit loads
+
+### Dll locking
+
+Dlls loaded by xUnitRevit are loaded in Revit's AppDomain, and therefore it's not possible to recompile them until Revit is closed (even if you see an auto reload option in the UI). But don't despair, since Revit 2020 it's possible to *edit & continue* your code while debugging, so you won't have to restart Revit each time.
+
+## Contributing
+
+xUnitRevit was developed to help us develop a better Speckle 2.0 connector for Revit, we hope you'll find it useful too. 
 
 Want to suggest a feature, report a bug, submit a PR? Please open an issue to discuss first! 
 
