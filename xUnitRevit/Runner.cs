@@ -31,6 +31,7 @@ namespace xUnitRevit
 
         var main = new MainWindow();
         main.Title = "xUnit Revit by Speckle";
+        main.MaxHeight = 800;
 
         //pre-load asssemblies, if you're a lazy developer
         (main.DataContext as MainViewModel).StartupAssemblies = Config.startupAssemblies;
