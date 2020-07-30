@@ -8,7 +8,9 @@
 
 ## Intro
 
-An xUnit runner for Autodesk Revit. Read more about this tool on our blog: TODO-LINK.
+An xUnit runner for Autodesk Revit. 
+
+Check out our blog post on this 👉 https://speckle.systems/blog/xunitrevit !
 
 xUnitRevit uses [speckle.xunit.runner.wpf](https://github.com/Speckle-Next/speckle.xunit.runner.wpf) which is a fork of [xunit.runner.wpf](https://github.com/Pilchie/xunit.runner.wpf), it allows to easily develop and run xUnit tests in Revit. 
 
