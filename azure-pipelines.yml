@@ -16,19 +16,7 @@ variables:
   buildPlatform: 'Any CPU'
   buildConfiguration: 'Release'
 
-
 steps:
-#get tag number
-- powershell: | 
-    $tags = git tag --sort=-creatordate
-    $tag = $tags[0]
-
-#update build number
-- bash: |
-    echo "##vso[build.updatebuildnumber]Release $(tag)"
-    condition: eq(variables['release.enabled'], 'true')
-    name: SetReleaseBuildName
-
 - task: NuGetToolInstaller@1
 
 - task: NuGetCommand@2
