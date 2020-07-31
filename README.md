@@ -180,6 +180,12 @@ We've added a couple of optional settings for lazy developers like me, to help s
 
 Dlls loaded by xUnitRevit are loaded in Revit's AppDomain, and therefore it's not possible to recompile them until Revit is closed (even if you see an auto reload option in the UI). But don't despair, since Revit 2020 it's possible to *edit & continue* your code while debugging, so you won't have to restart Revit each time.
 
+### Next steps
+
+As for next steps, we're planning to add additional features to run xUnitRevit from a CI/CD routine. 
+
+Stay tuned!
+
 ## Contributing
 
 xUnitRevit was developed to help us develop a better Speckle 2.0 connector for Revit, we hope you'll find it useful too. 
