@@ -106,7 +106,7 @@ namespace xUnitRevitUtils
     /// <param name="doc">Revit Document</param>
     /// <param name="transactionName">Transaction Name</param>
     /// <returns></returns>
-    public static Task RunInTransaction(Action action, Document doc, string transactionName = "transaction")
+    public static Task RunInTransaction(Action action, Document doc, string transactionName = "transaction", bool ignoreWarnings = false)
     {
       var tcs = new TaskCompletionSource<string>();
       Queue.Add(new Action(() =>
@@ -116,6 +116,14 @@ namespace xUnitRevitUtils
           using (Transaction transaction = new Transaction(doc, transactionName))
           {
             transaction.Start();
+
+             if (ignoreWarnings)
+             {
+                 var options = transaction.GetFailureHandlingOptions();
+                 options.SetFailuresPreprocessor(new IgnoreAllWarnings());
+                  transaction.SetFailureHandlingOptions(options);
+             }
+
             action.Invoke();
             transaction.Commit();
           }
@@ -130,7 +138,25 @@ namespace xUnitRevitUtils
       EventHandler.Raise();
 
       return tcs.Task;
+
     }
-#endregion
-  }
+
+    public class IgnoreAllWarnings : IFailuresPreprocessor
+    {
+      public FailureProcessingResult PreprocessFailures(FailuresAccessor failuresAccessor)
+      {
+        var failList = failuresAccessor.GetFailureMessages();
+      
+        foreach (FailureMessageAccessor failure in failList)
+        {
+          failuresAccessor.DeleteWarning(failure);
+        }
+      
+        return FailureProcessingResult.Continue;
+      }
+    }
+
+
+        #endregion
+    }
 }
