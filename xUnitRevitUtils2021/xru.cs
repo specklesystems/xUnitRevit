@@ -16,15 +16,15 @@ namespace xUnitRevitUtils
   /// </summary>
   public static class xru
   {
-    private static UIApplication Uiapp { get; set; }
+    public static UIApplication Uiapp { get; set; }
 
     private static List<Action> Queue { get; set; }
     private static ExternalEvent EventHandler { get; set; }
 
-    private static SynchronizationContext UiContext { get; set; }
+    public static SynchronizationContext UiContext { get; set; }
 
     public static void Initialize(UIApplication uiapp, SynchronizationContext uiContext, ExternalEvent eventHandler, List<Action> queue)
-    {
+    { 
       Uiapp = uiapp;
       UiContext = uiContext;
       EventHandler = eventHandler;
