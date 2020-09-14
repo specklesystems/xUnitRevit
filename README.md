@@ -29,10 +29,12 @@ This repo is composed of 2 projects:
 
 There are very few steps required to create and run your fist unit tests with xUnitRevit:
 
-1. build/install xUnitRevit
-2. create a test library
-3. start Revit, launch the xUnitRevit addin and select the test library
-4. done! Add a star ⭐ to our repo if it was useful 😉
+1. create a copy of the [config sample file](xUnitRevit/config_sample.json) and re-name the copy to `config.json`
+2. follow the instructions [here](#configuration) to set up the config file 
+2. build/install xUnitRevit
+3. create a test library
+4. start Revit, launch the xUnitRevit addin and select the test library
+5. done! Add a star ⭐ to our repo if it was useful 😉
 
 ### Building/installing xUnitRevit
 
@@ -171,7 +173,7 @@ public void MoveWallsUp()
 
 ### Configuration
 
-We've added a couple of optional settings for lazy developers like me, to help speed up frequent testing of a test library. You'll see a `config_sample.json` in the root of the project, rename it `config.json` and set it to `copy local = true`. You'll then be able to configure
+We've added a couple of optional settings for lazy developers like me, to help speed up frequent testing of a test library. You'll see a `config_sample.json` in the root of the project. Copy the file and rename the copy to `config.json` and set it to `copy local = true`. You'll then be able to configure
 
 - `startupAssemblies`: if set, automatically loads a set of assemblies when xUnitRevit starts
 - `autoStart`: if true, automatically opens the xUnitRevit window after Revit loads
