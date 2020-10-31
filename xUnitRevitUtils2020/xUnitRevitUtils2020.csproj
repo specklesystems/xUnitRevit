@@ -15,7 +15,8 @@
     <AssemblyName>xUnitRevitUtils</AssemblyName>
     <RootNamespace>xUnitRevitUtils</RootNamespace>
     <PackageId>xUnitRevitUtils.2020</PackageId>
-    <Version>1.0.3</Version>
+    <Version>1.0.4</Version>
+    <AssemblyVersion>1.0.4.0</AssemblyVersion>
   </PropertyGroup>
 
   <ItemGroup>
