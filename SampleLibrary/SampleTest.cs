@@ -13,7 +13,7 @@ namespace SampleLibrary
   public class SampleTest
   {
     /// <summary>
-    /// Checks wether all walls in the model have a valid volume
+    /// Checks whether all walls in the model have a valid volume
     /// </summary>
     [Fact]
     public void WallsHaveVolume()
