@@ -34,8 +34,12 @@ namespace SampleLibrary
     [Fact]
     public void SampleFail()
     {
-      var feet = UnitUtils.ConvertToInternalUnits(3000, DisplayUnitType.DUT_MILLIMETERS);
-      Assert.Equal(5, feet);
+#if pre2021
+            var feet = UnitUtils.ConvertToInternalUnits(3000, DisplayUnitType.DUT_MILLIMETERS);
+#else
+            var feet = UnitUtils.ConvertToInternalUnits(3000, UnitTypeId.Feet);
+#endif
+            Assert.Equal(5, feet);
     }
 
     [Fact]
@@ -60,12 +64,8 @@ namespace SampleLibrary
           var wallFaceEdges = face.GetEdgesAsCurveLoops();
           grossArea = ExporterIFCUtils.ComputeAreaOfCurveLoops(wallFaceEdges);
           transaction.RollBack();
-
         }
       }, doc).Wait();
-
-
-
       Assert.True(grossArea > 0);
     }
 

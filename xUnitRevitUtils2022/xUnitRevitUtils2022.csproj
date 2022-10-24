@@ -1,0 +1,27 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <PackageProjectUrl>https://github.com/Speckle-Next/xunit-Revit</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/Speckle-Next/xunit-Revit</RepositoryUrl>
+    <PackageTags>xunit revit runner</PackageTags>
+    <Authors>Speckle</Authors>
+    <Company>Speckle</Company>
+    <Description>xUnit runner utilities for Revit 2021</Description>
+    <PackageIconUrl>https://avatars2.githubusercontent.com/u/2092016</PackageIconUrl>
+    <PackageIcon>xunit.png</PackageIcon>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <AssemblyName>xUnitRevitUtils</AssemblyName>
+    <RootNamespace>xUnitRevitUtils</RootNamespace>
+    <PackageId>xUnitRevitUtils.2021</PackageId>
+    <Version>1.0.4</Version>
+    <AssemblyVersion>1.0.4.0</AssemblyVersion>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="ModPlus.Revit.API.2022" Version="1.0.0" />
+    <PackageReference Include="xunit" Version="2.4.1" />
+  </ItemGroup>
+
+</Project>
