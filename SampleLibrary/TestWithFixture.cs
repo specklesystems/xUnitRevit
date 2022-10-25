@@ -47,9 +47,14 @@ namespace SampleLibrary
     {
       var wall = fixture.Doc.GetElement(new ElementId(346573));
       var param = wall.get_Parameter(BuiltInParameter.WALL_BASE_OFFSET);
-      var baseOffset = UnitUtils.ConvertFromInternalUnits(param.AsDouble(), param.DisplayUnitType);
 
-      Assert.Equal(2000, baseOffset);
+#if pre2021
+            var baseOffset = UnitUtils.ConvertFromInternalUnits(param.AsDouble(), param.DisplayUnitType);
+#else
+            var baseOffset = UnitUtils.ConvertFromInternalUnits(param.AsDouble(), param.GetUnitTypeId());
+#endif
+
+            Assert.Equal(2000, baseOffset);
     }
 
     [Fact]
@@ -62,8 +67,13 @@ namespace SampleLibrary
         foreach(var wall in walls)
         {
           var param = wall.get_Parameter(BuiltInParameter.WALL_BASE_OFFSET);
-          var baseOffset = UnitUtils.ConvertToInternalUnits(2000, param.DisplayUnitType);
-          param.Set(baseOffset);
+
+#if pre2021
+            var baseOffset = UnitUtils.ConvertToInternalUnits(2000, param.DisplayUnitType);
+#else
+            var baseOffset = UnitUtils.ConvertToInternalUnits(2000, param.GetUnitTypeId());
+#endif
+              param.Set(baseOffset);
         }
       }, fixture.Doc)
       .Wait(); // Important! Wait for action to finish
@@ -71,8 +81,12 @@ namespace SampleLibrary
       foreach (var wall in walls)
       {
         var param = wall.get_Parameter(BuiltInParameter.WALL_BASE_OFFSET);
-        var baseOffset = UnitUtils.ConvertFromInternalUnits(param.AsDouble(), param.DisplayUnitType);
-        Assert.Equal(2000, baseOffset);
+#if pre2021
+            var baseOffset = UnitUtils.ConvertFromInternalUnits(param.AsDouble(), param.DisplayUnitType);
+#else
+                var baseOffset = UnitUtils.ConvertFromInternalUnits(param.AsDouble(), param.GetUnitTypeId());
+#endif
+                Assert.Equal(2000, baseOffset);
       }
     }
   }
