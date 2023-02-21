@@ -239,8 +239,20 @@
   </PropertyGroup>
   <!-- MULTIVERSION POST BUILD EVENTS START -->
   <Target Name="AfterBuild">
-    <CallTarget Condition="'$(Configuration)' == 'Debug2021' Or '$(Configuration)' == 'Debug2020' Or '$(Configuration)' == 'Debug2019'" Targets="AfterBuildDebug" />
-    <CallTarget Condition="'$(Configuration)' == 'Release2021' Or '$(Configuration)' == 'Release2020' Or '$(Configuration)' == 'Release2019'" Targets="AfterBuildRelease" />
+    <CallTarget Condition="
+      '$(Configuration)' == 'Debug2023' Or 
+      '$(Configuration)' == 'Debug2022' Or 
+      '$(Configuration)' == 'Debug2021' Or 
+      '$(Configuration)' == 'Debug2020' Or 
+      '$(Configuration)' == 'Debug2019'
+    " Targets="AfterBuildDebug" />
+    <CallTarget Condition="
+      '$(Configuration)' == 'Release2023' Or 
+      '$(Configuration)' == 'Release2022' Or 
+      '$(Configuration)' == 'Release2021' Or 
+      '$(Configuration)' == 'Release2020' Or 
+      '$(Configuration)' == 'Release2019'
+    " Targets="AfterBuildRelease" />
   </Target>
   <Target Name="AfterBuildDebug">
     <ItemGroup>
