@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <package >
   <metadata>
-    <id>xUnitRevitUtils.2023</id>
+    <id>xUnitRevitUtils.2022</id>
     <version>$version$</version>
     <title>$title$</title>
     <authors>$author$</authors>
@@ -15,7 +15,7 @@
     <copyright>Copyright 2022</copyright>
     <tags>xunit revit</tags>
     <dependencies>
-      <dependency id="ModPlus.Revit.API.2023" version="1.0.0"  />
+      <dependency id="ModPlus.Revit.API.2022" version="1.0.0"  />
       <dependency id="xunit" version="2.4.1" />
     </dependencies>
   </metadata>
