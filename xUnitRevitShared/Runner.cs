@@ -8,9 +8,9 @@ using System.Threading;
 using System.Threading.Tasks;
 using Xunit.Runner.Wpf;
 using Xunit.Runner.Wpf.ViewModel;
-using xUnitRevitUtils;
 using System.Web.Script.Serialization;
 using System.IO;
+using xUnitRevitUtils;
 
 namespace xUnitRevit
 {
@@ -34,7 +34,9 @@ namespace xUnitRevit
         main.MaxHeight = 800;
 
         //pre-load asssemblies, if you're a lazy developer
-        (main.DataContext as MainViewModel).StartupAssemblies = Config.startupAssemblies;
+#if REVIT2021
+        (main.DataContext as MainViewModel).StartupAssemblies = Config.startupAssemblies21;
+#endif
         main.Show();
 
 
