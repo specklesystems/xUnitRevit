@@ -11,7 +11,7 @@ namespace xUnitRevit
   /// </summary>
   public class Configuration
   {
-    public List<string> startupAssemblies { get; set; } = new List<string>();
+    public IList<string> StartupAssemblies { get; set; } = new List<string>();
     public bool autoStart { get; set; } = false;
   }
 }

@@ -16,9 +16,9 @@ namespace xUnitRevit
   {
 
     public bool Running = false;
-    public List<Action> Queue { get; set; }
+    public IList<Action> Queue { get; set; }
 
-    public ExternalEventHandler(List<Action> queue)
+    public ExternalEventHandler(IList<Action> queue)
     {
       Queue = queue;
     }

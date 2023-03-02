@@ -17,10 +17,10 @@ namespace xUnitRevitUtils
   public static class xru
   {
     public static UIApplication Uiapp { get; set; }
-    private static List<Action> Queue { get; set; }
+    private static IList<Action> Queue { get; set; }
     private static ExternalEvent EventHandler { get; set; }
     public static SynchronizationContext UiContext { get; set; }
-    public static void Initialize(UIApplication uiapp, SynchronizationContext uiContext, ExternalEvent eventHandler, List<Action> queue)
+    public static void Initialize(UIApplication uiapp, SynchronizationContext uiContext, ExternalEvent eventHandler, IList<Action> queue)
     {
       Uiapp = uiapp;
       UiContext = uiContext;
@@ -30,12 +30,11 @@ namespace xUnitRevitUtils
 
     #region utility methods
 
-
     /// <summary>
     /// Returns the selected elements in the active document
     /// </summary>
     /// <returns></returns>
-    public static List<Element> GetActiveSelection()
+    public static IList<Element> GetActiveSelection()
     {
       Assert.NotNull(Uiapp);
 
@@ -56,7 +55,6 @@ namespace xUnitRevitUtils
       Assert.NotNull(doc);
       return doc;
     }
-
 
     /// <summary>
     /// Creates a new empty document
@@ -94,7 +92,6 @@ namespace xUnitRevitUtils
       Assert.NotNull(doc);
       return doc;
     }
-
 
     /// <summary>
     /// Runs an Action in a Revit transaction, uses TaskCompletionSource to communicate when done
@@ -136,7 +133,6 @@ namespace xUnitRevitUtils
       EventHandler.Raise();
 
       return tcs.Task;
-
     }
 
     /// <summary>
@@ -164,7 +160,6 @@ namespace xUnitRevitUtils
       EventHandler.Raise();
 
       return tcs.Task;
-
     }
 
     /// <summary>
@@ -184,8 +179,6 @@ namespace xUnitRevitUtils
         return FailureProcessingResult.Continue;
       }
     }
-
-
     #endregion
   }
 }

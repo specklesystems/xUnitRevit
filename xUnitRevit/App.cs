@@ -18,7 +18,6 @@ namespace xUnitRevit
       return Result.Succeeded;
     }
 
-
     private void ControlledApplication_ApplicationInitialized(object sender, Autodesk.Revit.DB.Events.ApplicationInitializedEventArgs e)
     {
       Application app = sender as Application;
@@ -29,7 +28,6 @@ namespace xUnitRevit
       if(Runner.Config.autoStart)
         Runner.Launch(uiapp);
     }
-
 
     public Result OnShutdown(UIControlledApplication a)
     {

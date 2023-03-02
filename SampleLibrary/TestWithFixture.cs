@@ -1,6 +1,4 @@
 ﻿using Autodesk.Revit.DB;
-using System;
-using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -8,27 +6,8 @@ using System.Threading.Tasks;
 using Xunit;
 using xUnitRevitUtils;
 
-namespace SampleLibrary
-{
-  public class DocFixture : IDisposable
-  {
-    public Document Doc { get; set; }
-    public IList<Element> Walls { get; set; }
-
-
-    public DocFixture()
-    {
-      var testModel = Utils.GetTestModel("walls.rvt");
-      Doc = xru.OpenDoc(testModel);
-
-      Walls = new FilteredElementCollector(Doc).WhereElementIsNotElementType().OfCategory(BuiltInCategory.OST_Walls).ToElements();
-    }
-
-    public void Dispose()
-    {
-    }
-  }
-  public class TestWithFixture : IClassFixture<DocFixture>
+namespace SampleLibrary {
+    public class TestWithFixture : IClassFixture<DocFixture>
   {
     DocFixture fixture; 
     public TestWithFixture(DocFixture fixture)

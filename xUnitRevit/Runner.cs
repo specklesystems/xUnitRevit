@@ -34,13 +34,11 @@ namespace xUnitRevit
         main.MaxHeight = 800;
 
         //pre-load asssemblies, if you're a lazy developer
-        (main.DataContext as MainViewModel).StartupAssemblies = Config.startupAssemblies;
+        if (main.DataContext is MainViewModel mainViewModel)
+            mainViewModel.StartupAssemblies = Config.StartupAssemblies.ToList();
         main.Show();
-
-
       }
-      catch (Exception e)
-      {
+      catch (Exception) {
         //fail silently
       }
     }
@@ -59,5 +57,4 @@ namespace xUnitRevit
       {}
     }
   }
-
 }

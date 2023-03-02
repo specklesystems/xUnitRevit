@@ -68,7 +68,5 @@ namespace SampleLibrary
       }, doc).Wait();
       Assert.True(grossArea > 0);
     }
-
-
   }
 }
