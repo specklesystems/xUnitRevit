@@ -17,6 +17,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "xUnitRevitUtils2023", "xUni
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "xUnitRevitUtils2022", "xUnitRevitUtils2022\xUnitRevitUtils2022.csproj", "{78770414-4F6B-4429-BD8F-F0F64A349551}"
 EndProject
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "xUnitRevitUtilsShared", "xUnitRevitUtilsShared\xUnitRevitUtilsShared.shproj", "{A379C699-F3E6-4DF2-9990-3A30F9D923B1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -171,5 +173,13 @@ Global
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {1CD726E4-6BBA-4FC3-9C57-0981EF1A9475}
+	EndGlobalSection
+	GlobalSection(SharedMSBuildProjectFiles) = preSolution
+		xUnitRevitUtilsShared\xUnitRevitUtilsShared.projitems*{02399359-9ca0-4b47-b467-541e290e700f}*SharedItemsImports = 5
+		xUnitRevitUtilsShared\xUnitRevitUtilsShared.projitems*{0def0f23-8ae2-461b-b014-8a0da7494088}*SharedItemsImports = 5
+		xUnitRevitUtilsShared\xUnitRevitUtilsShared.projitems*{78770414-4f6b-4429-bd8f-f0f64a349551}*SharedItemsImports = 5
+		xUnitRevitUtilsShared\xUnitRevitUtilsShared.projitems*{977e0b63-5706-4c2b-9c01-3c02d9ebe377}*SharedItemsImports = 5
+		xUnitRevitUtilsShared\xUnitRevitUtilsShared.projitems*{a379c699-f3e6-4df2-9990-3a30f9d923b1}*SharedItemsImports = 13
+		xUnitRevitUtilsShared\xUnitRevitUtilsShared.projitems*{e0bf38c2-13bc-4acc-b0f2-4dfe82965db4}*SharedItemsImports = 5
 	EndGlobalSection
 EndGlobal

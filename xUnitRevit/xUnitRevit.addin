@@ -10,7 +10,7 @@
     <VendorDescription>Speckle</VendorDescription>
   </AddIn>
   <AddIn Type="Application">
-    <Name>Application xUnitRevit</Name>
+    <Name>Speckle xUnitRevit</Name>
     <Assembly>xUnitRevit\xUnitRevit.dll</Assembly>
     <FullClassName>xUnitRevit.App</FullClassName>
     <ClientId>d9c9ed6f-7b2a-4c47-8f87-a6f33a553d50</ClientId>
