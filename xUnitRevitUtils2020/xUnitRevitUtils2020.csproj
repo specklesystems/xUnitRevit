@@ -20,12 +20,10 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Include="..\xUnitRevitUtils2021\xru.cs" Link="xru.cs" />
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="ModPlus.Revit.API.2020" Version="1.0.0" />
     <PackageReference Include="xunit" Version="2.4.1" />
   </ItemGroup>
+
+  <Import Project="..\xUnitRevitUtilsShared\xUnitRevitUtilsShared.projitems" Label="Shared" />
 
 </Project>

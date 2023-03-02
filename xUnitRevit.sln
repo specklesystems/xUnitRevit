@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.2.32630.192
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "xUnitRevit", "xUnitRevit\xUnitRevit.csproj", "{27A79ACA-7EA8-4406-8BB8-216578CC3AB7}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "xUnitRevitUtils2021", "xUnitRevitUtils2021\xUnitRevitUtils2021.csproj", "{977E0B63-5706-4C2B-9C01-3C02D9EBE377}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "xUnitRevitUtils2020", "xUnitRevitUtils2020\xUnitRevitUtils2020.csproj", "{0DEF0F23-8AE2-461B-B014-8A0DA7494088}"
@@ -20,6 +18,14 @@ EndProject
 Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "xUnitRevitShared", "xUnitRevitShared\xUnitRevitShared.shproj", "{48829151-F9BE-4237-B506-B29F71A361E7}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "xUnitRevit2021", "xUnitRevit2021\xUnitRevit2021.csproj", "{CBC76044-BB09-4C2A-9392-89343F4DAE6A}"
+EndProject
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "xUnitRevitUtilsShared", "xUnitRevitUtilsShared\xUnitRevitUtilsShared.shproj", "{AB8A5ECF-F8E1-4D5C-A488-2A38AB6B4B44}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "xUnitRevit2023", "xUnitRevit2023\xUnitRevit2023.csproj", "{C887776C-F153-4093-8837-35D72422B846}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "xUnitRevit2022", "xUnitRevit2022\xUnitRevit2022.csproj", "{F7CE564D-E468-44E1-AF57-3B8F37629E25}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "xUnitRevit2020", "xUnitRevit2020\xUnitRevit2020.csproj", "{C3BE785A-1EC0-4EBD-89CF-387ECEC152EB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -37,29 +43,6 @@ Global
 		Release2023|Any CPU = Release2023|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{27A79ACA-7EA8-4406-8BB8-216578CC3AB7}.Debug|Any CPU.ActiveCfg = Debug2021|Any CPU
-		{27A79ACA-7EA8-4406-8BB8-216578CC3AB7}.Debug|Any CPU.Build.0 = Debug2021|Any CPU
-		{27A79ACA-7EA8-4406-8BB8-216578CC3AB7}.Debug2019|Any CPU.ActiveCfg = Debug2019|Any CPU
-		{27A79ACA-7EA8-4406-8BB8-216578CC3AB7}.Debug2019|Any CPU.Build.0 = Debug2019|Any CPU
-		{27A79ACA-7EA8-4406-8BB8-216578CC3AB7}.Debug2020|Any CPU.ActiveCfg = Debug2020|Any CPU
-		{27A79ACA-7EA8-4406-8BB8-216578CC3AB7}.Debug2020|Any CPU.Build.0 = Debug2020|Any CPU
-		{27A79ACA-7EA8-4406-8BB8-216578CC3AB7}.Debug2021|Any CPU.ActiveCfg = Debug2021|Any CPU
-		{27A79ACA-7EA8-4406-8BB8-216578CC3AB7}.Debug2021|Any CPU.Build.0 = Debug2021|Any CPU
-		{27A79ACA-7EA8-4406-8BB8-216578CC3AB7}.Debug2022|Any CPU.ActiveCfg = Debug2022|Any CPU
-		{27A79ACA-7EA8-4406-8BB8-216578CC3AB7}.Debug2022|Any CPU.Build.0 = Debug2022|Any CPU
-		{27A79ACA-7EA8-4406-8BB8-216578CC3AB7}.Debug2023|Any CPU.ActiveCfg = Debug2023|Any CPU
-		{27A79ACA-7EA8-4406-8BB8-216578CC3AB7}.Debug2023|Any CPU.Build.0 = Debug2023|Any CPU
-		{27A79ACA-7EA8-4406-8BB8-216578CC3AB7}.Release|Any CPU.ActiveCfg = Release2021|Any CPU
-		{27A79ACA-7EA8-4406-8BB8-216578CC3AB7}.Release2019|Any CPU.ActiveCfg = Release2019|Any CPU
-		{27A79ACA-7EA8-4406-8BB8-216578CC3AB7}.Release2019|Any CPU.Build.0 = Release2019|Any CPU
-		{27A79ACA-7EA8-4406-8BB8-216578CC3AB7}.Release2020|Any CPU.ActiveCfg = Release2020|Any CPU
-		{27A79ACA-7EA8-4406-8BB8-216578CC3AB7}.Release2020|Any CPU.Build.0 = Release2020|Any CPU
-		{27A79ACA-7EA8-4406-8BB8-216578CC3AB7}.Release2021|Any CPU.ActiveCfg = Release2021|Any CPU
-		{27A79ACA-7EA8-4406-8BB8-216578CC3AB7}.Release2021|Any CPU.Build.0 = Release2021|Any CPU
-		{27A79ACA-7EA8-4406-8BB8-216578CC3AB7}.Release2022|Any CPU.ActiveCfg = Release2022|Any CPU
-		{27A79ACA-7EA8-4406-8BB8-216578CC3AB7}.Release2022|Any CPU.Build.0 = Release2022|Any CPU
-		{27A79ACA-7EA8-4406-8BB8-216578CC3AB7}.Release2023|Any CPU.ActiveCfg = Release2023|Any CPU
-		{27A79ACA-7EA8-4406-8BB8-216578CC3AB7}.Release2023|Any CPU.Build.0 = Release2023|Any CPU
 		{977E0B63-5706-4C2B-9C01-3C02D9EBE377}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{977E0B63-5706-4C2B-9C01-3C02D9EBE377}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{977E0B63-5706-4C2B-9C01-3C02D9EBE377}.Debug2019|Any CPU.ActiveCfg = Debug|Any CPU
@@ -193,6 +176,78 @@ Global
 		{CBC76044-BB09-4C2A-9392-89343F4DAE6A}.Release2022|Any CPU.Build.0 = Release|Any CPU
 		{CBC76044-BB09-4C2A-9392-89343F4DAE6A}.Release2023|Any CPU.ActiveCfg = Release|Any CPU
 		{CBC76044-BB09-4C2A-9392-89343F4DAE6A}.Release2023|Any CPU.Build.0 = Release|Any CPU
+		{C887776C-F153-4093-8837-35D72422B846}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C887776C-F153-4093-8837-35D72422B846}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C887776C-F153-4093-8837-35D72422B846}.Debug2019|Any CPU.ActiveCfg = Debug|Any CPU
+		{C887776C-F153-4093-8837-35D72422B846}.Debug2019|Any CPU.Build.0 = Debug|Any CPU
+		{C887776C-F153-4093-8837-35D72422B846}.Debug2020|Any CPU.ActiveCfg = Debug|Any CPU
+		{C887776C-F153-4093-8837-35D72422B846}.Debug2020|Any CPU.Build.0 = Debug|Any CPU
+		{C887776C-F153-4093-8837-35D72422B846}.Debug2021|Any CPU.ActiveCfg = Debug|Any CPU
+		{C887776C-F153-4093-8837-35D72422B846}.Debug2021|Any CPU.Build.0 = Debug|Any CPU
+		{C887776C-F153-4093-8837-35D72422B846}.Debug2022|Any CPU.ActiveCfg = Debug|Any CPU
+		{C887776C-F153-4093-8837-35D72422B846}.Debug2022|Any CPU.Build.0 = Debug|Any CPU
+		{C887776C-F153-4093-8837-35D72422B846}.Debug2023|Any CPU.ActiveCfg = Debug|Any CPU
+		{C887776C-F153-4093-8837-35D72422B846}.Debug2023|Any CPU.Build.0 = Debug|Any CPU
+		{C887776C-F153-4093-8837-35D72422B846}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C887776C-F153-4093-8837-35D72422B846}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C887776C-F153-4093-8837-35D72422B846}.Release2019|Any CPU.ActiveCfg = Release|Any CPU
+		{C887776C-F153-4093-8837-35D72422B846}.Release2019|Any CPU.Build.0 = Release|Any CPU
+		{C887776C-F153-4093-8837-35D72422B846}.Release2020|Any CPU.ActiveCfg = Release|Any CPU
+		{C887776C-F153-4093-8837-35D72422B846}.Release2020|Any CPU.Build.0 = Release|Any CPU
+		{C887776C-F153-4093-8837-35D72422B846}.Release2021|Any CPU.ActiveCfg = Release|Any CPU
+		{C887776C-F153-4093-8837-35D72422B846}.Release2021|Any CPU.Build.0 = Release|Any CPU
+		{C887776C-F153-4093-8837-35D72422B846}.Release2022|Any CPU.ActiveCfg = Release|Any CPU
+		{C887776C-F153-4093-8837-35D72422B846}.Release2022|Any CPU.Build.0 = Release|Any CPU
+		{C887776C-F153-4093-8837-35D72422B846}.Release2023|Any CPU.ActiveCfg = Release|Any CPU
+		{C887776C-F153-4093-8837-35D72422B846}.Release2023|Any CPU.Build.0 = Release|Any CPU
+		{F7CE564D-E468-44E1-AF57-3B8F37629E25}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F7CE564D-E468-44E1-AF57-3B8F37629E25}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F7CE564D-E468-44E1-AF57-3B8F37629E25}.Debug2019|Any CPU.ActiveCfg = Debug|Any CPU
+		{F7CE564D-E468-44E1-AF57-3B8F37629E25}.Debug2019|Any CPU.Build.0 = Debug|Any CPU
+		{F7CE564D-E468-44E1-AF57-3B8F37629E25}.Debug2020|Any CPU.ActiveCfg = Debug|Any CPU
+		{F7CE564D-E468-44E1-AF57-3B8F37629E25}.Debug2020|Any CPU.Build.0 = Debug|Any CPU
+		{F7CE564D-E468-44E1-AF57-3B8F37629E25}.Debug2021|Any CPU.ActiveCfg = Debug|Any CPU
+		{F7CE564D-E468-44E1-AF57-3B8F37629E25}.Debug2021|Any CPU.Build.0 = Debug|Any CPU
+		{F7CE564D-E468-44E1-AF57-3B8F37629E25}.Debug2022|Any CPU.ActiveCfg = Debug|Any CPU
+		{F7CE564D-E468-44E1-AF57-3B8F37629E25}.Debug2022|Any CPU.Build.0 = Debug|Any CPU
+		{F7CE564D-E468-44E1-AF57-3B8F37629E25}.Debug2023|Any CPU.ActiveCfg = Debug|Any CPU
+		{F7CE564D-E468-44E1-AF57-3B8F37629E25}.Debug2023|Any CPU.Build.0 = Debug|Any CPU
+		{F7CE564D-E468-44E1-AF57-3B8F37629E25}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F7CE564D-E468-44E1-AF57-3B8F37629E25}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F7CE564D-E468-44E1-AF57-3B8F37629E25}.Release2019|Any CPU.ActiveCfg = Release|Any CPU
+		{F7CE564D-E468-44E1-AF57-3B8F37629E25}.Release2019|Any CPU.Build.0 = Release|Any CPU
+		{F7CE564D-E468-44E1-AF57-3B8F37629E25}.Release2020|Any CPU.ActiveCfg = Release|Any CPU
+		{F7CE564D-E468-44E1-AF57-3B8F37629E25}.Release2020|Any CPU.Build.0 = Release|Any CPU
+		{F7CE564D-E468-44E1-AF57-3B8F37629E25}.Release2021|Any CPU.ActiveCfg = Release|Any CPU
+		{F7CE564D-E468-44E1-AF57-3B8F37629E25}.Release2021|Any CPU.Build.0 = Release|Any CPU
+		{F7CE564D-E468-44E1-AF57-3B8F37629E25}.Release2022|Any CPU.ActiveCfg = Release|Any CPU
+		{F7CE564D-E468-44E1-AF57-3B8F37629E25}.Release2022|Any CPU.Build.0 = Release|Any CPU
+		{F7CE564D-E468-44E1-AF57-3B8F37629E25}.Release2023|Any CPU.ActiveCfg = Release|Any CPU
+		{F7CE564D-E468-44E1-AF57-3B8F37629E25}.Release2023|Any CPU.Build.0 = Release|Any CPU
+		{C3BE785A-1EC0-4EBD-89CF-387ECEC152EB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C3BE785A-1EC0-4EBD-89CF-387ECEC152EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C3BE785A-1EC0-4EBD-89CF-387ECEC152EB}.Debug2019|Any CPU.ActiveCfg = Debug|Any CPU
+		{C3BE785A-1EC0-4EBD-89CF-387ECEC152EB}.Debug2019|Any CPU.Build.0 = Debug|Any CPU
+		{C3BE785A-1EC0-4EBD-89CF-387ECEC152EB}.Debug2020|Any CPU.ActiveCfg = Debug|Any CPU
+		{C3BE785A-1EC0-4EBD-89CF-387ECEC152EB}.Debug2020|Any CPU.Build.0 = Debug|Any CPU
+		{C3BE785A-1EC0-4EBD-89CF-387ECEC152EB}.Debug2021|Any CPU.ActiveCfg = Debug|Any CPU
+		{C3BE785A-1EC0-4EBD-89CF-387ECEC152EB}.Debug2021|Any CPU.Build.0 = Debug|Any CPU
+		{C3BE785A-1EC0-4EBD-89CF-387ECEC152EB}.Debug2022|Any CPU.ActiveCfg = Debug|Any CPU
+		{C3BE785A-1EC0-4EBD-89CF-387ECEC152EB}.Debug2022|Any CPU.Build.0 = Debug|Any CPU
+		{C3BE785A-1EC0-4EBD-89CF-387ECEC152EB}.Debug2023|Any CPU.ActiveCfg = Debug|Any CPU
+		{C3BE785A-1EC0-4EBD-89CF-387ECEC152EB}.Debug2023|Any CPU.Build.0 = Debug|Any CPU
+		{C3BE785A-1EC0-4EBD-89CF-387ECEC152EB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C3BE785A-1EC0-4EBD-89CF-387ECEC152EB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C3BE785A-1EC0-4EBD-89CF-387ECEC152EB}.Release2019|Any CPU.ActiveCfg = Release|Any CPU
+		{C3BE785A-1EC0-4EBD-89CF-387ECEC152EB}.Release2019|Any CPU.Build.0 = Release|Any CPU
+		{C3BE785A-1EC0-4EBD-89CF-387ECEC152EB}.Release2020|Any CPU.ActiveCfg = Release|Any CPU
+		{C3BE785A-1EC0-4EBD-89CF-387ECEC152EB}.Release2020|Any CPU.Build.0 = Release|Any CPU
+		{C3BE785A-1EC0-4EBD-89CF-387ECEC152EB}.Release2021|Any CPU.ActiveCfg = Release|Any CPU
+		{C3BE785A-1EC0-4EBD-89CF-387ECEC152EB}.Release2021|Any CPU.Build.0 = Release|Any CPU
+		{C3BE785A-1EC0-4EBD-89CF-387ECEC152EB}.Release2022|Any CPU.ActiveCfg = Release|Any CPU
+		{C3BE785A-1EC0-4EBD-89CF-387ECEC152EB}.Release2022|Any CPU.Build.0 = Release|Any CPU
+		{C3BE785A-1EC0-4EBD-89CF-387ECEC152EB}.Release2023|Any CPU.ActiveCfg = Release|Any CPU
+		{C3BE785A-1EC0-4EBD-89CF-387ECEC152EB}.Release2023|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -201,7 +256,16 @@ Global
 		SolutionGuid = {1CD726E4-6BBA-4FC3-9C57-0981EF1A9475}
 	EndGlobalSection
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
+		xUnitRevitUtilsShared\xUnitRevitUtilsShared.projitems*{02399359-9ca0-4b47-b467-541e290e700f}*SharedItemsImports = 5
+		xUnitRevitUtilsShared\xUnitRevitUtilsShared.projitems*{0def0f23-8ae2-461b-b014-8a0da7494088}*SharedItemsImports = 5
 		xUnitRevitShared\xUnitRevitShared.projitems*{48829151-f9be-4237-b506-b29f71a361e7}*SharedItemsImports = 13
+		xUnitRevitUtilsShared\xUnitRevitUtilsShared.projitems*{78770414-4f6b-4429-bd8f-f0f64a349551}*SharedItemsImports = 5
+		xUnitRevitUtilsShared\xUnitRevitUtilsShared.projitems*{977e0b63-5706-4c2b-9c01-3c02d9ebe377}*SharedItemsImports = 5
+		xUnitRevitUtilsShared\xUnitRevitUtilsShared.projitems*{ab8a5ecf-f8e1-4d5c-a488-2a38ab6b4b44}*SharedItemsImports = 13
+		xUnitRevitShared\xUnitRevitShared.projitems*{c3be785a-1ec0-4ebd-89cf-387ecec152eb}*SharedItemsImports = 4
+		xUnitRevitShared\xUnitRevitShared.projitems*{c887776c-f153-4093-8837-35d72422b846}*SharedItemsImports = 4
 		xUnitRevitShared\xUnitRevitShared.projitems*{cbc76044-bb09-4c2a-9392-89343f4dae6a}*SharedItemsImports = 4
+		xUnitRevitUtilsShared\xUnitRevitUtilsShared.projitems*{e0bf38c2-13bc-4acc-b0f2-4dfe82965db4}*SharedItemsImports = 5
+		xUnitRevitShared\xUnitRevitShared.projitems*{f7ce564d-e468-44e1-af57-3b8f37629e25}*SharedItemsImports = 4
 	EndGlobalSection
 EndGlobal

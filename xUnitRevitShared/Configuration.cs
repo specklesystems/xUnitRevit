@@ -11,11 +11,7 @@ namespace xUnitRevit
   /// </summary>
   public class Configuration
   {
-    public List<string> startupAssemblies19 { get; set; } = new List<string>();
-    public List<string> startupAssemblies20 { get; set; } = new List<string>();
-    public List<string> startupAssemblies21 { get; set; } = new List<string>();
-    public List<string> startupAssemblies22 { get; set; } = new List<string>();
-    public List<string> startupAssemblies23 { get; set; } = new List<string>();
+    public List<string> startupAssemblies { get; set; } = new List<string>();
     public bool autoStart { get; set; } = false;
   }
 }

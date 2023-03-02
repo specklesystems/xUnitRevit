@@ -15,7 +15,6 @@
     <Compile Include="$(MSBuildThisFileDirectory)Configuration.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ExternalEventHandler.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Runner.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)xru.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="$(MSBuildThisFileDirectory)config.json">
@@ -24,6 +23,8 @@
     <None Include="$(MSBuildThisFileDirectory)config_sample.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="$(MSBuildThisFileDirectory)xUnitRevit.addin" />
+    <None Include="$(MSBuildThisFileDirectory)xUnitRevit.addin">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 </Project>

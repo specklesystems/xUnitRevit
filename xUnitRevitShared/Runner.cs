@@ -34,12 +34,8 @@ namespace xUnitRevit
         main.MaxHeight = 800;
 
         //pre-load asssemblies, if you're a lazy developer
-#if REVIT2021
-        (main.DataContext as MainViewModel).StartupAssemblies = Config.startupAssemblies21;
-#endif
+        (main.DataContext as MainViewModel).StartupAssemblies = Config.startupAssemblies;
         main.Show();
-
-
       }
       catch (Exception e)
       {

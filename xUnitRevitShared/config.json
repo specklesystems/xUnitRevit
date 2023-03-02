@@ -1,6 +1,9 @@
 {
-  "startupAssemblies21": [
-    "C:\\Users\\conno\\Documents\\GitHub\\speckle-sharp\\Objects\\Converters\\ConverterRevit\\ConverterRevitTests\\bin\\Debug\\ConverterRevitTests.dll"
+  "startupAssemblies": [
+    "C:\\Users\\conno\\Documents\\GitHub\\speckle-sharp\\Objects\\Converters\\ConverterRevit\\ConverterRevitTests\\ConverterRevitTests2020\\bin\\Debug\\ConverterRevitTests.dll",
+    "C:\\Users\\conno\\Documents\\GitHub\\speckle-sharp\\Objects\\Converters\\ConverterRevit\\ConverterRevitTests\\ConverterRevitTests2021\\bin\\Debug\\ConverterRevitTests.dll",
+    "C:\\Users\\conno\\Documents\\GitHub\\speckle-sharp\\Objects\\Converters\\ConverterRevit\\ConverterRevitTests\\ConverterRevitTests2022\\bin\\Debug\\ConverterRevitTests.dll",
+    "C:\\Users\\conno\\Documents\\GitHub\\speckle-sharp\\Objects\\Converters\\ConverterRevit\\ConverterRevitTests\\ConverterRevitTests2023\\bin\\Debug\\ConverterRevitTests.dll"
   ],
   "autoStart": true
 }
