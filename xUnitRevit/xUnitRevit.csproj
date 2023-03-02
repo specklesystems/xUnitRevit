@@ -136,10 +136,6 @@
     <Compile Include="Runner.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="app.config" />
-    <None Include="config.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
     <None Include="config_sample.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
@@ -183,8 +179,9 @@
     <When Condition="'$(Configuration)' == 'Debug2021' Or '$(Configuration)' == 'Release2021'">
       <ItemGroup>
         <PackageReference Include="ModPlus.Revit.API.2021">
-          <Version>1.0.0</Version>
+          <Version>4.0.0</Version>
           <ExcludeAssets>runtime</ExcludeAssets>
+          <IncludeAssets>compile; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
         </PackageReference>
       </ItemGroup>
       <ItemGroup>
@@ -225,9 +222,6 @@
   </Choose>
   <!--END-->
   <ItemGroup>
-    <PackageReference Include="MvvmLight">
-      <Version>5.4.1.1</Version>
-    </PackageReference>
     <PackageReference Include="speckle.xunit.runner.wpf">
       <Version>1.0.9</Version>
     </PackageReference>

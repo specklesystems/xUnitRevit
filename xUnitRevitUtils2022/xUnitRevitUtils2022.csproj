@@ -20,8 +20,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="ModPlus.Revit.API.2022" Version="1.0.0" />
-    <PackageReference Include="xunit" Version="2.4.1" />
+    <PackageReference Include="ModPlus.Revit.API.2022" Version="4.0.0" />
+    <PackageReference Include="xunit" Version="2.4.2" />
   </ItemGroup>
 
 </Project>

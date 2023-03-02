@@ -1,27 +1,13 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="MSBuild.Sdk.Extras/3.0.44">
 
   <PropertyGroup>
-    <TargetFramework>netstandard2.0</TargetFramework>
-    <PackageProjectUrl>https://github.com/Speckle-Next/xunit-Revit</PackageProjectUrl>
-    <RepositoryUrl>https://github.com/Speckle-Next/xunit-Revit</RepositoryUrl>
-    <PackageTags>xunit revit runner</PackageTags>
-    <Authors>Speckle</Authors>
-    <Company>Speckle</Company>
-    <Description>xUnit runner utilities for Revit 2023</Description>
-    <PackageIconUrl>https://avatars2.githubusercontent.com/u/2092016</PackageIconUrl>
-    <PackageIcon>xunit.png</PackageIcon>
-    <PackageLicenseExpression>MIT</PackageLicenseExpression>
-    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <AssemblyName>xUnitRevitUtils</AssemblyName>
-    <RootNamespace>xUnitRevitUtils</RootNamespace>
+    <TargetFrameworks>netstandard2.0</TargetFrameworks>
     <PackageId>xUnitRevitUtils.2023</PackageId>
-    <Version>1.0.5</Version>
-    <AssemblyVersion>1.0.5.0</AssemblyVersion>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="ModPlus.Revit.API.2023" Version="1.0.0" />
-    <PackageReference Include="xunit" Version="2.4.1" />
+    <PackageReference Include="ModPlus.Revit.API.2023" Version="4.0.0" />
+    <PackageReference Include="xunit" Version="2.4.2" />
   </ItemGroup>
 
 </Project>
