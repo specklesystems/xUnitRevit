@@ -1,8 +1,9 @@
-﻿<Project Sdk="MSBuild.Sdk.Extras/3.0.44">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFrameworks>netstandard2.0</TargetFrameworks>
+    <TargetFramework>netstandard2.0</TargetFramework>
     <PackageId>xUnitRevitUtils.2023</PackageId>
+	<IsPackable>true</IsPackable>
   </PropertyGroup>
 
   <ItemGroup>
