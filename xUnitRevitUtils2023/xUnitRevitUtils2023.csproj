@@ -2,6 +2,7 @@
 
   <PropertyGroup>
     <TargetFrameworks>netstandard2.0</TargetFrameworks>
+	  <Description>xUnit runner utilities for Revit 2023</Description>
     <PackageId>xUnitRevitUtils.2023</PackageId>
   </PropertyGroup>
 
