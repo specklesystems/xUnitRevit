@@ -10,10 +10,6 @@ namespace xUnitRevit
   [Transaction(TransactionMode.Manual)]
   public class Command : IExternalCommand
   {
-    static object consoleLock = new object();
-    static ManualResetEvent finished = new ManualResetEvent(false);
-    static Result result = Result.Succeeded;
-
     public Result Execute(
       ExternalCommandData commandData,
       ref string message,

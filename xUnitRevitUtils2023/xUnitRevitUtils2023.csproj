@@ -8,7 +8,9 @@
 
 
   <ItemGroup>
-    <PackageReference Include="Speckle.Revit.API" Version="2023.0.0" />
+    <PackageReference Include="Speckle.Revit.API" Version="2023.0.0">
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
     <PackageReference Include="xunit" Version="2.4.2" />
   </ItemGroup>
 
