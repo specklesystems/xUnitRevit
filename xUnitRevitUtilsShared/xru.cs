@@ -48,6 +48,23 @@ namespace xUnitRevitUtils
       Assert.NotNull(doc);
       return doc;
     }
+    /// <summary>
+    /// Closes the provided Revit document
+    /// </summary>
+    /// <param name="doc">Revit document to be closed</param>
+    /// <param name="saveChanges">If true, saves changes to document before closing</param>
+    /// <returns>
+    /// Bool indicating whether or not the document was successfully closed
+    /// </returns>
+    public static bool CloseDoc(Document doc, bool saveChanges = false)
+    {
+      if (doc == null)
+        return false;
+
+      var result = false;
+      UiContext.Send(x => result = doc.Close(saveChanges), null);
+      return result;
+    }
 
     /// <summary>
     /// Creates a new empty document
