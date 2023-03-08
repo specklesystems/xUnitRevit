@@ -184,12 +184,6 @@
           <IncludeAssets>compile; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
         </PackageReference>
       </ItemGroup>
-      <ItemGroup>
-        <ProjectReference Include="..\xUnitRevitUtils2021\xUnitRevitUtils2021.csproj">
-          <Project>{977e0b63-5706-4c2b-9c01-3c02d9ebe377}</Project>
-          <Name>xUnitRevitUtils2021</Name>
-        </ProjectReference>
-      </ItemGroup>
     </When>
     <When Condition="$(Configuration.Contains('2022'))">
       <ItemGroup>
@@ -224,6 +218,9 @@
   <ItemGroup>
     <PackageReference Include="speckle.xunit.runner.wpf">
       <Version>1.0.9</Version>
+    </PackageReference>
+    <PackageReference Include="xUnitRevitUtils.2021">
+      <Version>1.0.4</Version>
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
