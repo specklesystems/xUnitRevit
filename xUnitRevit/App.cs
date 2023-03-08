@@ -16,12 +16,12 @@ namespace xUnitRevit
 
     private void ControlledApplication_ApplicationInitialized(object sender, Autodesk.Revit.DB.Events.ApplicationInitializedEventArgs e)
     {
-      Application app = sender as Application;
-      UIApplication uiapp = new UIApplication(app);
+      var app = sender as Application;
+      using var uiapp = new UIApplication(app);
 
       Runner.ReadConfig();
 
-      if (Runner.Config.autoStart)
+      if (Runner.Config.AutoStart)
         Runner.Launch(uiapp);
     }
 
