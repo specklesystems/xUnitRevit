@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <RevitAddIns>
-  <AddIn Type="Command">
+  <!--<AddIn Type="Command">
     <Text>xUnitRevit</Text>
     <Description>xUnitRevit</Description>
     <Assembly>xUnitRevit\xUnitRevit.dll</Assembly>
@@ -8,9 +8,9 @@
     <ClientId>9d179887-9fae-41f9-940a-697b59cafe4a</ClientId>
     <VendorId>speckle</VendorId>
     <VendorDescription>Speckle</VendorDescription>
-  </AddIn>
+  </AddIn>-->
   <AddIn Type="Application">
-    <Name>Application xUnitRevit</Name>
+    <Name>xUnitRevit Runner</Name>
     <Assembly>xUnitRevit\xUnitRevit.dll</Assembly>
     <FullClassName>xUnitRevit.App</FullClassName>
     <ClientId>d9c9ed6f-7b2a-4c47-8f87-a6f33a553d50</ClientId>

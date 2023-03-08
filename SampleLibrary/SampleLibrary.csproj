@@ -52,9 +52,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="RevitAPIIFC, Version=21.0.0.0, Culture=neutral, processorArchitecture=AMD64">
-      <SpecificVersion>False</SpecificVersion>
+    <Reference Include="RevitAPIIFC">
       <HintPath>.\RevitAPIIFC.dll</HintPath>
+      <Private>False</Private>
+      <PrivateAssets>all</PrivateAssets>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -73,9 +74,12 @@
     <Compile Include="Utils.cs" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="xUnitRevitUtils.2021">
-      <Version>1.0.4</Version>
-    </PackageReference>
+    <ProjectReference Include="..\xUnitRevitUtils2023\xUnitRevitUtils2023.csproj">
+      <Project>{e0bf38c2-13bc-4acc-b0f2-4dfe82965db4}</Project>
+      <Name>xUnitRevitUtils2023</Name>
+      <Private>False</Private>
+      <PrivateAssets>all</PrivateAssets>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
