@@ -1,36 +1,13 @@
-﻿using Autodesk.Revit.DB;
-using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Linq;
+using Autodesk.Revit.DB;
 using Xunit;
 using xUnitRevitUtils;
 
 namespace SampleLibrary
 {
-  public class DocFixture : IDisposable
-  {
-    public Document Doc { get; set; }
-    public IList<Element> Walls { get; set; }
-
-
-    public DocFixture()
-    {
-      var testModel = Utils.GetTestModel("walls.rvt");
-      Doc = xru.OpenDoc(testModel);
-
-      Walls = new FilteredElementCollector(Doc).WhereElementIsNotElementType().OfCategory(BuiltInCategory.OST_Walls).ToElements();
-    }
-
-    public void Dispose()
-    {
-    }
-  }
   public class TestWithFixture : IClassFixture<DocFixture>
   {
-    DocFixture fixture; 
+    DocFixture fixture;
     public TestWithFixture(DocFixture fixture)
     {
       this.fixture = fixture;
@@ -51,10 +28,10 @@ namespace SampleLibrary
 #if pre2021
             var baseOffset = UnitUtils.ConvertFromInternalUnits(param.AsDouble(), param.DisplayUnitType);
 #else
-            var baseOffset = UnitUtils.ConvertFromInternalUnits(param.AsDouble(), param.GetUnitTypeId());
+      var baseOffset = UnitUtils.ConvertFromInternalUnits(param.AsDouble(), param.GetUnitTypeId());
 #endif
 
-            Assert.Equal(2000, baseOffset);
+      Assert.Equal(2000, baseOffset);
     }
 
     [Fact]
@@ -64,16 +41,16 @@ namespace SampleLibrary
 
       xru.RunInTransaction(() =>
       {
-        foreach(var wall in walls)
+        foreach (var wall in walls)
         {
           var param = wall.get_Parameter(BuiltInParameter.WALL_BASE_OFFSET);
 
 #if pre2021
             var baseOffset = UnitUtils.ConvertToInternalUnits(2000, param.DisplayUnitType);
 #else
-            var baseOffset = UnitUtils.ConvertToInternalUnits(2000, param.GetUnitTypeId());
+          var baseOffset = UnitUtils.ConvertToInternalUnits(2000, param.GetUnitTypeId());
 #endif
-              param.Set(baseOffset);
+          param.Set(baseOffset);
         }
       }, fixture.Doc)
       .Wait(); // Important! Wait for action to finish
@@ -84,9 +61,9 @@ namespace SampleLibrary
 #if pre2021
             var baseOffset = UnitUtils.ConvertFromInternalUnits(param.AsDouble(), param.DisplayUnitType);
 #else
-                var baseOffset = UnitUtils.ConvertFromInternalUnits(param.AsDouble(), param.GetUnitTypeId());
+        var baseOffset = UnitUtils.ConvertFromInternalUnits(param.AsDouble(), param.GetUnitTypeId());
 #endif
-                Assert.Equal(2000, baseOffset);
+        Assert.Equal(2000, baseOffset);
       }
     }
   }

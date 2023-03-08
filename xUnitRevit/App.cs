@@ -1,9 +1,5 @@
-#region Namespaces
-using System;
-using System.Collections.Generic;
+﻿#region Namespaces
 using Autodesk.Revit.ApplicationServices;
-using Autodesk.Revit.Attributes;
-using Autodesk.Revit.DB;
 using Autodesk.Revit.UI;
 #endregion
 
@@ -13,11 +9,10 @@ namespace xUnitRevit
   {
     public Result OnStartup(UIControlledApplication a)
     {
-      a.ControlledApplication.ApplicationInitialized += ControlledApplication_ApplicationInitialized; ;
+      a.ControlledApplication.ApplicationInitialized += ControlledApplication_ApplicationInitialized;
 
       return Result.Succeeded;
     }
-
 
     private void ControlledApplication_ApplicationInitialized(object sender, Autodesk.Revit.DB.Events.ApplicationInitializedEventArgs e)
     {
@@ -26,10 +21,9 @@ namespace xUnitRevit
 
       Runner.ReadConfig();
 
-      if(Runner.Config.autoStart)
+      if (Runner.Config.autoStart)
         Runner.Launch(uiapp);
     }
-
 
     public Result OnShutdown(UIControlledApplication a)
     {

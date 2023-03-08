@@ -1,16 +1,14 @@
-﻿using Autodesk.Revit.UI;
-using System;
+﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Reflection;
-using System.Text;
 using System.Threading;
-using System.Threading.Tasks;
+using System.Web.Script.Serialization;
+using Autodesk.Revit.UI;
 using Xunit.Runner.Wpf;
 using Xunit.Runner.Wpf.ViewModel;
 using xUnitRevitUtils;
-using System.Web.Script.Serialization;
-using System.IO;
 
 namespace xUnitRevit
 {
@@ -34,12 +32,11 @@ namespace xUnitRevit
         main.MaxHeight = 800;
 
         //pre-load asssemblies, if you're a lazy developer
-        (main.DataContext as MainViewModel).StartupAssemblies = Config.startupAssemblies;
+        if (main.DataContext is MainViewModel mainViewModel)
+          mainViewModel.StartupAssemblies = Config.StartupAssemblies.ToList();
         main.Show();
-
-
       }
-      catch (Exception e)
+      catch (Exception)
       {
         //fail silently
       }
@@ -55,9 +52,7 @@ namespace xUnitRevit
         var json = File.ReadAllText(path);
         Config = JavaScriptSerializer.Deserialize<Configuration>(json);
       }
-      catch
-      {}
+      catch { }
     }
   }
-
 }

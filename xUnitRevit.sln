@@ -17,6 +17,12 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "xUnitRevitUtils2023", "xUni
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "xUnitRevitUtils2022", "xUnitRevitUtils2022\xUnitRevitUtils2022.csproj", "{78770414-4F6B-4429-BD8F-F0F64A349551}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SolutionItems", "SolutionItems", "{F5A2849D-7C58-4894-B9C5-8488E244B7CF}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+		Directory.Build.props = Directory.Build.props
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -44,6 +50,7 @@ Global
 		{27A79ACA-7EA8-4406-8BB8-216578CC3AB7}.Debug2023|Any CPU.ActiveCfg = Debug2023|Any CPU
 		{27A79ACA-7EA8-4406-8BB8-216578CC3AB7}.Debug2023|Any CPU.Build.0 = Debug2023|Any CPU
 		{27A79ACA-7EA8-4406-8BB8-216578CC3AB7}.Release|Any CPU.ActiveCfg = Release2021|Any CPU
+		{27A79ACA-7EA8-4406-8BB8-216578CC3AB7}.Release|Any CPU.Build.0 = Release2021|Any CPU
 		{27A79ACA-7EA8-4406-8BB8-216578CC3AB7}.Release2019|Any CPU.ActiveCfg = Release2019|Any CPU
 		{27A79ACA-7EA8-4406-8BB8-216578CC3AB7}.Release2019|Any CPU.Build.0 = Release2019|Any CPU
 		{27A79ACA-7EA8-4406-8BB8-216578CC3AB7}.Release2020|Any CPU.ActiveCfg = Release2020|Any CPU

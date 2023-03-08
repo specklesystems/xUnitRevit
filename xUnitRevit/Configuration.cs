@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
 namespace xUnitRevit
 {
@@ -11,7 +7,7 @@ namespace xUnitRevit
   /// </summary>
   public class Configuration
   {
-    public List<string> startupAssemblies { get; set; } = new List<string>();
+    public IList<string> StartupAssemblies { get; set; } = new List<string>();
     public bool autoStart { get; set; } = false;
   }
 }

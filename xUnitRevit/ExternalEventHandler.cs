@@ -1,10 +1,7 @@
-﻿using Autodesk.Revit.UI;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Autodesk.Revit.UI;
 
 namespace xUnitRevit
 {
@@ -16,9 +13,9 @@ namespace xUnitRevit
   {
 
     public bool Running = false;
-    public List<Action> Queue { get; set; }
+    public IList<Action> Queue { get; set; }
 
-    public ExternalEventHandler(List<Action> queue)
+    public ExternalEventHandler(IList<Action> queue)
     {
       Queue = queue;
     }

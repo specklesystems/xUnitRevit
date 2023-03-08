@@ -1,10 +1,6 @@
-﻿using Autodesk.Revit.DB;
+﻿using System.Linq;
+using Autodesk.Revit.DB;
 using Autodesk.Revit.DB.IFC;
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
 using Xunit;
 using xUnitRevitUtils;
 
@@ -37,9 +33,9 @@ namespace SampleLibrary
 #if pre2021
             var feet = UnitUtils.ConvertToInternalUnits(3000, DisplayUnitType.DUT_MILLIMETERS);
 #else
-            var feet = UnitUtils.ConvertToInternalUnits(3000, UnitTypeId.Feet);
+      var feet = UnitUtils.ConvertToInternalUnits(3000, UnitTypeId.Feet);
 #endif
-            Assert.Equal(5, feet);
+      Assert.Equal(5, feet);
     }
 
     [Fact]
@@ -68,7 +64,5 @@ namespace SampleLibrary
       }, doc).Wait();
       Assert.True(grossArea > 0);
     }
-
-
   }
 }

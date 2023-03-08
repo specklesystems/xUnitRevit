@@ -2,30 +2,13 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
-    <PackageProjectUrl>https://github.com/Speckle-Next/xunit-Revit</PackageProjectUrl>
-    <RepositoryUrl>https://github.com/Speckle-Next/xunit-Revit</RepositoryUrl>
-    <PackageTags>xunit revit runner</PackageTags>
-    <Authors>Speckle</Authors>
-    <Company>Speckle</Company>
     <Description>xUnit runner utilities for Revit 2019</Description>
-    <PackageIconUrl>https://avatars2.githubusercontent.com/u/2092016</PackageIconUrl>
-    <PackageIcon>xunit.png</PackageIcon>
-    <PackageLicenseExpression>MIT</PackageLicenseExpression>
-    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <AssemblyName>xUnitRevitUtils</AssemblyName>
-    <RootNamespace>xUnitRevitUtils</RootNamespace>
     <PackageId>xUnitRevitUtils.2019</PackageId>
-    <Version>1.0.5</Version>
-    <AssemblyVersion>1.0.5.0</AssemblyVersion>
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Include="..\xUnitRevitUtils2021\xru.cs" Link="xru.cs" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <PackageReference Include="ModPlus.Revit.API.2019" Version="1.0.0" />
-    <PackageReference Include="xunit" Version="2.4.1" />
+    <PackageReference Include="ModPlus.Revit.API.2019" Version="4.0.0" />
+    <PackageReference Include="xunit" Version="2.4.2" />
   </ItemGroup>
 
 </Project>
