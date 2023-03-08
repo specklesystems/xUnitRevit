@@ -6,8 +6,9 @@
     <PackageId>xUnitRevitUtils.2023</PackageId>
   </PropertyGroup>
 
+
   <ItemGroup>
-    <PackageReference Include="ModPlus.Revit.API.2023" Version="4.0.0" />
+    <PackageReference Include="Speckle.Revit.API" Version="2023.0.0" />
     <PackageReference Include="xunit" Version="2.4.2" />
   </ItemGroup>
 

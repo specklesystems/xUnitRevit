@@ -6,9 +6,6 @@
     <PackageId>xUnitRevitUtils.2020</PackageId>
   </PropertyGroup>
 
-  <ItemGroup>
-    <Compile Include="..\xUnitRevitUtils2021\xru.cs" Link="xru.cs" />
-  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="ModPlus.Revit.API.2020" Version="4.0.0" />

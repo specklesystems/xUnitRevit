@@ -63,6 +63,7 @@
     <None Include="$(MSBuildThisFileDirectory)\LICENSE" Pack="true" PackagePath="\" />
     <None Include="$(MSBuildThisFileDirectory)\icon.png" Pack="true" PackagePath="\" />
     <None Include="$(MSBuildThisFileDirectory)\readme.md" Pack="true" PackagePath="\"/>
+    <Compile Include="$(MSBuildThisFileDirectory)\xUnitRevitUtilsShared\xru.cs" Link="xru.cs" />
   </ItemGroup>
 
   <ItemGroup>
