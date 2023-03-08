@@ -22,8 +22,8 @@ namespace SampleLibrary
     [Fact]
     public void WallOffset()
     {
-      var wall = fixture.Doc.GetElement(new ElementId(346573));
-      var param = wall.get_Parameter(BuiltInParameter.WALL_BASE_OFFSET);
+      using var wall = fixture.Doc.GetElement(new ElementId(346573));
+      using var param = wall.get_Parameter(BuiltInParameter.WALL_BASE_OFFSET);
 
 #if pre2021
             var baseOffset = UnitUtils.ConvertFromInternalUnits(param.AsDouble(), param.DisplayUnitType);
@@ -57,7 +57,7 @@ namespace SampleLibrary
 
       foreach (var wall in walls)
       {
-        var param = wall.get_Parameter(BuiltInParameter.WALL_BASE_OFFSET);
+        using var param = wall.get_Parameter(BuiltInParameter.WALL_BASE_OFFSET);
 #if pre2021
             var baseOffset = UnitUtils.ConvertFromInternalUnits(param.AsDouble(), param.DisplayUnitType);
 #else

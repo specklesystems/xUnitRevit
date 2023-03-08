@@ -23,20 +23,22 @@ namespace xUnitRevit
       try
       {
         var queue = new List<Action>();
-        var eventHandler = ExternalEvent.Create(new ExternalEventHandler(queue));
+        using var eventHandler = ExternalEvent.Create(new ExternalEventHandler(queue));
 
         xru.Initialize(uiapp, SynchronizationContext.Current, eventHandler, queue);
 
-        var main = new MainWindow();
-        main.Title = "xUnit Revit by Speckle";
-        main.MaxHeight = 800;
+        var main = new MainWindow
+        {
+          Title = "xUnit Revit by Speckle",
+          MaxHeight = 800
+        };
 
         //pre-load asssemblies, if you're a lazy developer
         if (main.DataContext is MainViewModel mainViewModel)
           mainViewModel.StartupAssemblies = Config.StartupAssemblies.ToList();
         main.Show();
       }
-      catch (Exception)
+      catch
       {
         //fail silently
       }
@@ -48,7 +50,7 @@ namespace xUnitRevit
       {
         var dir = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
         var path = Path.Combine(dir, "config.json");
-        JavaScriptSerializer JavaScriptSerializer = new JavaScriptSerializer();
+        var JavaScriptSerializer = new JavaScriptSerializer();
         var json = File.ReadAllText(path);
         Config = JavaScriptSerializer.Deserialize<Configuration>(json);
       }

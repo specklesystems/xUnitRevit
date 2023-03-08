@@ -74,11 +74,9 @@
     <Compile Include="Utils.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\xUnitRevitUtils2023\xUnitRevitUtils2023.csproj">
-      <Project>{e0bf38c2-13bc-4acc-b0f2-4dfe82965db4}</Project>
-      <Name>xUnitRevitUtils2023</Name>
-      <Private>False</Private>
-      <PrivateAssets>all</PrivateAssets>
+    <ProjectReference Include="..\xUnitRevitUtils2021\xUnitRevitUtils2021.csproj">
+      <Project>{977e0b63-5706-4c2b-9c01-3c02d9ebe377}</Project>
+      <Name>xUnitRevitUtils2021</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

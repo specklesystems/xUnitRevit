@@ -15,11 +15,9 @@ namespace xUnitRevit
       ref string message,
       ElementSet elements)
     {
-      UIApplication uiapp = commandData.Application;
+      var uiapp = commandData.Application;
       Runner.Launch(uiapp);
       return Result.Succeeded;
     }
   }
-
-
 }

@@ -44,7 +44,7 @@ namespace xUnitRevitUtils
       Assert.NotNull(Uiapp);
       Document doc = null;
       //OpenAndActivateDocument only works if run from the current context
-      UiContext.Send(x => { doc = Uiapp.OpenAndActivateDocument(filePath).Document; }, null);
+      UiContext.Send(x => doc = Uiapp.OpenAndActivateDocument(filePath).Document, null);
       Assert.NotNull(doc);
       return doc;
     }
@@ -66,7 +66,9 @@ namespace xUnitRevitUtils
         if (overwrite && File.Exists(filePath))
           File.Delete(filePath);
       }
-      catch { }
+      catch
+      {
+      }
 
       //OpenAndActivateDocument only works if run from the current context
       UiContext.Send(x =>
@@ -101,20 +103,18 @@ namespace xUnitRevitUtils
       {
         try
         {
-          using (Transaction transaction = new Transaction(doc, transactionName))
+          using var transaction = new Transaction(doc, transactionName);
+          transaction.Start();
+
+          if (ignoreWarnings)
           {
-            transaction.Start();
-
-            if (ignoreWarnings)
-            {
-              var options = transaction.GetFailureHandlingOptions();
-              options.SetFailuresPreprocessor(new IgnoreAllWarnings());
-              transaction.SetFailureHandlingOptions(options);
-            }
-
-            action.Invoke();
-            transaction.Commit();
+            using var options = transaction.GetFailureHandlingOptions();
+            options.SetFailuresPreprocessor(new IgnoreAllWarnings());
+            transaction.SetFailureHandlingOptions(options);
           }
+
+          action.Invoke();
+          transaction.Commit();
         }
         catch (Exception e)
         {

@@ -8,6 +8,6 @@ namespace xUnitRevit
   public class Configuration
   {
     public IList<string> StartupAssemblies { get; set; } = new List<string>();
-    public bool autoStart { get; set; } = false;
+    public bool AutoStart { get; set; } = false;
   }
 }
