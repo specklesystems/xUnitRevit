@@ -11,7 +11,7 @@
   </AddIn>-->
   <AddIn Type="Application">
     <Name>xUnitRevit Runner</Name>
-    <Assembly>xUnitRevit\xUnitRevit.dll</Assembly>
+    <Assembly>xUnitRevitRunner\xUnitRevitRunner.dll</Assembly>
     <FullClassName>xUnitRevit.App</FullClassName>
     <ClientId>d9c9ed6f-7b2a-4c47-8f87-a6f33a553d50</ClientId>
     <VendorId>speckle</VendorId>

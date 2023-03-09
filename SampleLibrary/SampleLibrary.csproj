@@ -15,6 +15,7 @@
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
     <TargetFrameworkProfile />
+    <LangVersion>8.0</LangVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -74,15 +75,15 @@
     <Compile Include="Utils.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\xUnitRevitUtils2023\xUnitRevitUtils2023.csproj">
-      <Project>{e0bf38c2-13bc-4acc-b0f2-4dfe82965db4}</Project>
-      <Name>xUnitRevitUtils2023</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <PackageReference Include="Speckle.Revit.API">
       <Version>2023.0.0</Version>
     </PackageReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\xUnitRevitUtils\xUnitRevitUtils2023\xUnitRevitUtils2023.csproj">
+      <Project>{637136c9-ab5d-4f00-948e-c68fae2682d0}</Project>
+      <Name>xUnitRevitUtils2023</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
