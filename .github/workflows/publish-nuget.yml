@@ -28,7 +28,7 @@ jobs:
         dotnet-version: 6.0.x
 
     - name: Build
-      run:  dotnet publish .\xUnitRevitUtils.sln -c Release -p:Version=${{ github.ref_name }}"
+      run:  dotnet publish .\xUnitRevitUtils.sln -c Release -p:Version=${{ github.ref_name }}
 
     - name: Publish
       run:  dotnet nuget push ".\artifacts\*.nupkg" -s https://api.nuget.org/v3/index.json -k ${{ secrets.NUGET_APIKEY }} -n --skip-duplicate
