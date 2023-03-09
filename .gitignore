@@ -348,5 +348,5 @@ MigrationBackup/
 
 # Ionide (cross platform F# VS Code tools) working folder
 .ionide/
-xUnitRevit/config.json
+xUnitRevitRunner/xUnitRevitRunnerShared/config.json
 .idea/
