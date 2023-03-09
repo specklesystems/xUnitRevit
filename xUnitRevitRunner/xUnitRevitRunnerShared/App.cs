@@ -37,7 +37,7 @@ namespace xUnitRevit
     private void ControlledApplication_ApplicationInitialized(object sender, Autodesk.Revit.DB.Events.ApplicationInitializedEventArgs e)
     {
       var app = sender as Application;
-      using var uiapp = new UIApplication(app);
+      var uiapp = new UIApplication(app);
 
       Runner.ReadConfig();
 
