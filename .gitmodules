@@ -1,0 +1,3 @@
+[submodule "speckle.xunit.runner.wpf"]
+	path = speckle.xunit.runner.wpf
+	url = git@github.com:specklesystems/speckle.xunit.runner.wpf.git
