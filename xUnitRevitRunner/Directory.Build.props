@@ -1,0 +1,89 @@
+﻿<Project>
+  <PropertyGroup>
+    <Copyright>Copyright (c) Speckle</Copyright>
+    <Authors>Speckle</Authors>
+    <Owners>Speckle</Owners>
+    <NeutralLanguage>en-US</NeutralLanguage>
+    <MinClientVersion>2.14</MinClientVersion>
+    <PublishRepositoryUrl>true</PublishRepositoryUrl>
+    <RepositoryUrl>https://github.com/specklesystems/xUnitRevit</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <Product>$(AssemblyName) ($(TargetFramework))</Product>
+    <Version>1.0.0</Version>
+    <LangVersion>8.0</LangVersion>
+    <AssemblyName>xUnitRevitRunner</AssemblyName>
+    <RootNamespace>xUnitRevitRunner</RootNamespace>
+
+    <!--<Nullable>enable</Nullable>-->
+    <ImplicitUsings>enable</ImplicitUsings>
+    <LangVersion>latest</LangVersion>
+    <NoWarn>$(NoWarn);1591;1701;1702;1705;VSX1000;CS0109;CS0108;CS0618;CS0114;NU1603</NoWarn>
+    <Platform>AnyCPU</Platform>
+
+    <EnableNETAnalyzers>true</EnableNETAnalyzers>
+    <AnalysisLevel>latest</AnalysisLevel>
+    <AnalysisMode>AllEnabledByDefault</AnalysisMode>
+
+  </PropertyGroup>
+
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <IncludeSymbols>false</IncludeSymbols>
+    <AllowedOutputExtensionsInPackageBuildOutputFolder>$(AllowedOutputExtensionsInPackageBuildOutputFolder);.pdb</AllowedOutputExtensionsInPackageBuildOutputFolder>
+    <EmbedUntrackedSources>true</EmbedUntrackedSources>
+    <DesignTimeBuild>false</DesignTimeBuild>
+    <DebugType>portable</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <DebugType>full</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+  
+  <Import Project="xUnitRevitRunnerShared\xUnitRevitRunnerShared.projitems" Label="Shared" />
+  <ItemGroup>
+    <ProjectReference Include="..\..\speckle.xunit.runner.wpf\speckle.xunit.runner.wpf\speckle.xunit.runner.wpf.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+
+  <!-- MULTIVERSION POST BUILD EVENTS START -->
+  <Target Name="PostBuildActions" AfterTargets="PostBuildEvent">
+    <CallTarget Condition="$(Configuration.Contains('Debug'))" Targets="AfterBuildDebug" />
+    <CallTarget Condition="$(Configuration.Contains('Release'))" Targets="AfterBuildRelease" />
+  </Target>
+  <Target Name="AfterBuildDebug">
+    <ItemGroup>
+      <SourceDLLs Include="$(TargetDir)\**\*.*" />
+      <SourceManifest Include="$(TargetDir)*.addin" />
+    </ItemGroup>
+    <Copy DestinationFolder="$(AppData)\Autodesk\REVIT\Addins\$(RevitVersion)\$(TargetName)\%(RecursiveDir)" SourceFiles="@(SourceDLLs)" />
+    <Copy DestinationFolder="$(AppData)\Autodesk\REVIT\Addins\$(RevitVersion)\" SourceFiles="@(SourceManifest)" />
+    <Message Importance="High" Text="COPY @(SourceManifest)" />
+  </Target>
+  <Target Name="AfterBuildRelease">
+    <ItemGroup>
+      <SourceDLLs Include="$(TargetDir)\**\*.*" />
+      <SourceManifest Include="$(TargetDir)*.addin" />
+    </ItemGroup>
+    <Message Importance="High" Text="RELEASE copy from $(TargetDir) to $(SolutionDir)\Release\Release$(RevitVersion)\$(TargetName)\" />
+    <Copy DestinationFolder="$(SolutionDir)\Release\Release$(RevitVersion)\$(TargetName)\%(RecursiveDir)" SourceFiles="@(SourceDLLs)" />
+    <Copy DestinationFolder="$(SolutionDir)\Release\Release$(RevitVersion)\" SourceFiles="@(SourceManifest)" />
+  </Target>
+  <!--END-->
+</Project>

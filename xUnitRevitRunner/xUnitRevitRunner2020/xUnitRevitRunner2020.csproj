@@ -1,94 +1,18 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
   <PropertyGroup>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{D15EC3E8-9387-4870-AA3B-A47432982B07}</ProjectGuid>
-    <OutputType>Library</OutputType>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>xUnitRevitRunner</RootNamespace>
-    <AssemblyName>xUnitRevitRunner</AssemblyName>
-    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
-    <FileAlignment>512</FileAlignment>
-    <Deterministic>true</Deterministic>
-    <LangVersion>8.0</LangVersion>
+    <TargetFramework>net48</TargetFramework>
     <RevitVersion>2020</RevitVersion>
   </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <DebugSymbols>true</DebugSymbols>
-    <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-    <StartProgram>$(ProgramW6432)\Autodesk\Revit 2020\Revit.exe</StartProgram>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <DebugType>pdbonly</DebugType>
-    <Optimize>true</Optimize>
-    <OutputPath>bin\Release\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-  </PropertyGroup>
+
   <ItemGroup>
-    <Reference Include="PresentationCore" />
-    <Reference Include="PresentationFramework" />
-    <Reference Include="System" />
-    <Reference Include="System.Core" />
-    <Reference Include="System.Web.Extensions" />
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="Microsoft.CSharp" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Net.Http" />
-    <Reference Include="System.Xml" />
-    <Reference Include="WindowsBase" />
+    <PackageReference Include="ModPlus.Revit.API.2020" Version="4.0.0" />
   </ItemGroup>
+
+
+
   <ItemGroup>
-    <Compile Include="Properties\AssemblyInfo.cs" />
+
+    <ProjectReference Include="..\..\xUnitRevitUtils\xUnitRevitUtils2020\xUnitRevitUtils2020.csproj" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\..\speckle.xunit.runner.wpf\speckle.xunit.runner.wpf\speckle.xunit.runner.wpf.csproj">
-      <Project>{b6404bad-9314-45f9-9f4d-a644d986fc37}</Project>
-      <Name>speckle.xunit.runner.wpf</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\xUnitRevitUtils\xUnitRevitUtils2020\xUnitRevitUtils2020.csproj">
-      <Project>{637136c9-ab5d-4f00-948e-c68fae2682d0}</Project>
-      <Name>xUnitRevitUtils2020</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <PackageReference Include="ModPlus.Revit.API.2020">
-      <Version>4.0.0</Version>
-    </PackageReference>
-  </ItemGroup>
-  <Import Project="..\xUnitRevitRunnerShared\xUnitRevitRunnerShared.projitems" Label="Shared" />
-  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <!-- MULTIVERSION POST BUILD EVENTS START -->
-  <Target Name="AfterBuild">
-    <CallTarget Condition="$(Configuration.Contains('Debug'))" Targets="AfterBuildDebug" />
-    <CallTarget Condition="$(Configuration.Contains('Release'))" Targets="AfterBuildRelease" />
-  </Target>
-  <Target Name="AfterBuildDebug">
-    <ItemGroup>
-      <SourceDLLs Include="$(TargetDir)\**\*.*" />
-      <SourceManifest Include="$(TargetDir)*.addin" />
-    </ItemGroup>
-    <Copy DestinationFolder="$(AppData)\Autodesk\REVIT\Addins\$(RevitVersion)\$(TargetName)\%(RecursiveDir)" SourceFiles="@(SourceDLLs)" />
-    <Copy DestinationFolder="$(AppData)\Autodesk\REVIT\Addins\$(RevitVersion)\" SourceFiles="@(SourceManifest)" />
-    <Message Importance="High" Text="COPY @(SourceManifest)" />
-  </Target>
-  <Target Name="AfterBuildRelease">
-    <ItemGroup>
-      <SourceDLLs Include="$(TargetDir)\**\*.*" />
-      <SourceManifest Include="$(TargetDir)*.addin" />
-    </ItemGroup>
-    <Message Importance="High" Text="RELEASE copy from $(TargetDir) to $(SolutionDir)\Release\Release$(RevitVersion)\$(TargetName)\" />
-    <Copy DestinationFolder="$(SolutionDir)\Release\Release$(RevitVersion)\$(TargetName)\%(RecursiveDir)" SourceFiles="@(SourceDLLs)" />
-    <Copy DestinationFolder="$(SolutionDir)\Release\Release$(RevitVersion)\" SourceFiles="@(SourceManifest)" />
-  </Target>
-  <!--END-->
 </Project>
