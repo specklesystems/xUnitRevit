@@ -16,7 +16,8 @@
     <RepositoryUrl>https://github.com/Speckle-Next/xunit-Revit</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
     <Product>$(AssemblyName) ($(TargetFramework))</Product>
-    <Version>1.1.0</Version>
+    <!--This is set by the TAG in the CI-->
+    <Version>0.0.1</Version>
 
     <AssemblyName>xUnitRevitUtils</AssemblyName>
     <RootNamespace>xUnitRevitUtils</RootNamespace>
