@@ -1,6 +1,6 @@
 # xUnitRevit
 
-[![Build Status](https://teocomi.visualstudio.com/Speckle/_apis/build/status/Speckle-Next.xunit-Revit?branchName=master)](https://teocomi.visualstudio.com/Speckle/_build/latest?definitionId=2&branchName=master)
+[![Build](https://github.com/specklesystems/xUnitRevit/actions/workflows/dotnet-desktop.yml/badge.svg?branch=master)](https://github.com/specklesystems/xUnitRevit/actions/workflows/dotnet-desktop.yml)
 
 ![xunit2](https://user-images.githubusercontent.com/2679513/88958499-77809980-d298-11ea-84b6-e0749790ffc5.gif)
 
@@ -20,7 +20,7 @@ Many thanks to all the developers of xunit and xunit.runner.wpf!
 
 This repo is composed of 2 projects:
 
-- **xUnitRevit**: the actual Revit addin
+- **xUnitRevitRunner**: the actual Revit addin
 - **xUnitRevitUtils**: a utility library to help pass Revit data to the test libraries when running the tests
 
 
@@ -29,18 +29,16 @@ This repo is composed of 2 projects:
 
 There are very few steps required to create and run your fist unit tests with xUnitRevit:
 
-1. create a copy of the [config sample file](xUnitRevit/config_sample.json) and re-name the copy to `config.json`
+1. create a copy of the [config sample file](xUnitRevitRunner/config_sample.json) and re-name the copy to `config.json`
 2. follow the instructions [here](#configuration) to set up the config file 
-2. build/install xUnitRevit
+2. build/install xUnitRevitRunner
 3. create a test library
-4. start Revit, launch the xUnitRevit addin and select the test library
+4. start Revit, launch the xUnitRevitRunner addin and select the test library
 5. done! Add a star ⭐ to our repo if it was useful 😉
 
 ### Building/installing xUnitRevit
 
-After cloning this repo, all you need to do to run xUnitRevit is to build the project in **Debug mode**, by selecting the build configuration that matches your Revit version.
-
-![image](https://user-images.githubusercontent.com/2679513/88941424-e5b96200-d280-11ea-8ef4-12fbb0ed13d2.png)
+After cloning this repo, all you need to do to run xUnitRevitRunner is to build the project corresponding to your revit version in **Debug mode**
 
 **This will build the project and copy its dlls to the Revit addin folder** `%appdata%\Autodesk\Revit\Addins`.
 
