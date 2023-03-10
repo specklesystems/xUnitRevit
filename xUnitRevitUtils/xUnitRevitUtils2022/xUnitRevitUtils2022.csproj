@@ -8,10 +8,14 @@
 
 
   <ItemGroup>
-    <PackageReference Include="Speckle.Revit.API" Version="2022.0.2.1" >
+    <PackageReference Include="Speckle.Revit.API" Version="2022.0.2.1">
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
-    <PackageReference Include="xunit" Version="2.4.2" />
+  </ItemGroup>
+
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\speckle.xunit.runner.wpf\speckle.xunit.runner.wpf\speckle.xunit.runner.wpf.csproj" />
   </ItemGroup>
 
 </Project>

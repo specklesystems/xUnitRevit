@@ -1,6 +1,7 @@
 ﻿using Autodesk.Revit.DB;
 using Autodesk.Revit.UI;
 using Xunit;
+using Xunit.Runner.Wpf.ViewModel;
 
 namespace xUnitRevitUtils
 {
@@ -13,12 +14,21 @@ namespace xUnitRevitUtils
     private static IList<Action> Queue { get; set; }
     private static ExternalEvent EventHandler { get; set; }
     public static SynchronizationContext UiContext { get; set; }
+    public static MainViewModel MainViewModel { get; set; }
     public static void Initialize(UIApplication uiapp, SynchronizationContext uiContext, ExternalEvent eventHandler, IList<Action> queue)
     {
       Uiapp = uiapp;
       UiContext = uiContext;
       EventHandler = eventHandler;
       Queue = queue;
+    }
+    public static void Initialize(UIApplication uiapp, SynchronizationContext uiContext, ExternalEvent eventHandler, IList<Action> queue, MainViewModel vm)
+    {
+      Uiapp = uiapp;
+      UiContext = uiContext;
+      EventHandler = eventHandler;
+      Queue = queue;
+      MainViewModel = vm;
     }
 
     #region utility methods

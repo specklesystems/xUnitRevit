@@ -25,8 +25,6 @@ namespace xUnitRevit
         var queue = new List<Action>();
         var eventHandler = ExternalEvent.Create(new ExternalEventHandler(queue));
 
-        xru.Initialize(uiapp, SynchronizationContext.Current, eventHandler, queue);
-
         var main = new MainWindow
         {
           Title = "xUnit Revit Runner by Speckle",
@@ -35,7 +33,10 @@ namespace xUnitRevit
 
         //pre-load asssemblies, if you're a lazy developer
         if (main.DataContext is MainViewModel mainViewModel)
+        {
+          xru.Initialize(uiapp, SynchronizationContext.Current, eventHandler, queue, mainViewModel);
           mainViewModel.StartupAssemblies = Config.StartupAssemblies.ToList();
+        }
         main.Show();
       }
       catch
