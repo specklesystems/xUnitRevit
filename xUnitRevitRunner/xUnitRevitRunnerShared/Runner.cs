@@ -23,7 +23,7 @@ namespace xUnitRevit
       try
       {
         var queue = new List<Action>();
-        using var eventHandler = ExternalEvent.Create(new ExternalEventHandler(queue));
+        var eventHandler = ExternalEvent.Create(new ExternalEventHandler(queue));
 
         xru.Initialize(uiapp, SynchronizationContext.Current, eventHandler, queue);
 
