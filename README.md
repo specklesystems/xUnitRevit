@@ -29,7 +29,7 @@ This repo is composed of 2 projects:
 
 There are very few steps required to create and run your fist unit tests with xUnitRevit:
 
-1. create a copy of the [config sample file](xUnitRevitRunner/config_sample.json) and re-name the copy to `config.json`
+1. create a copy of the [config sample file](xUnitRevitRunner/xUnitRevitRunnerShared/config_sample.json) and re-name the copy to `config.json`
 2. follow the instructions [here](#configuration) to set up the config file 
 2. build/install xUnitRevitRunner
 3. create a test library
