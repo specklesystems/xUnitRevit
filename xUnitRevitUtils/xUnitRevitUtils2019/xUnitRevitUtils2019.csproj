@@ -8,7 +8,10 @@
 
   <ItemGroup>
     <PackageReference Include="ModPlus.Revit.API.2019" Version="4.0.0" />
-    <PackageReference Include="xunit" Version="2.4.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\speckle.xunit.runner.wpf\speckle.xunit.runner.wpf\speckle.xunit.runner.wpf.csproj" />
   </ItemGroup>
 
 </Project>
