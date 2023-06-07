@@ -24,9 +24,6 @@
     <Compile Include="$(MSBuildThisFileDirectory)Runner.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="$(MSBuildThisFileDirectory)config.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
     <None Include="$(MSBuildThisFileDirectory)xUnitRevitRunner.addin">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>

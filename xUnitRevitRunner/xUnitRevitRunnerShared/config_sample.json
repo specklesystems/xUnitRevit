@@ -2,5 +2,5 @@
   "startupAssemblies": [
     "C:\\Code\\Speckle-Next\\ConverterRevit\\ConverterRevitTests\\bin\\Debug\\ConverterRevitTests.dll"
   ],
-  "autoStart": true
+  "autoStart": false
 }
