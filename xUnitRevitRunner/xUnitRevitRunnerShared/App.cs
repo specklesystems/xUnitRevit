@@ -30,6 +30,17 @@ namespace xUnitRevit
         xUnitRevitButton.SetContextualHelp(new ContextualHelp(ContextualHelpType.Url, "https://speckle.systems"));
       }
 
+      AppDomain.CurrentDomain.AssemblyResolve += delegate (object sender, ResolveEventArgs e)
+      {
+        String currentFolder = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
+        AssemblyName requestedName = new AssemblyName(e.Name);
+        if (requestedName.Name == "xunit.abstractions" || requestedName.Name == "xunit.runner.utility.net452")
+        {
+          var resolvedAssembly = Assembly.LoadFrom(Path.Combine(currentFolder, requestedName.Name + ".dll"));
+          return resolvedAssembly;
+        }
+        return null;
+      };
 
       return Result.Succeeded;
     }
