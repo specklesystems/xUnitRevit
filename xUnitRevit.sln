@@ -46,6 +46,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "xUnitRevitRunner2023", "xUn
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "speckle.xunit.runner.wpf", "speckle.xunit.runner.wpf\speckle.xunit.runner.wpf\speckle.xunit.runner.wpf.csproj", "{54B0C195-2AF8-47EE-805A-07F8FD1E7CAA}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "xUnitRevitUtils2024", "xUnitRevitUtils\xUnitRevitUtils2024\xUnitRevitUtils2024.csproj", "{DE7A457B-8591-486F-B7D5-D609741680CC}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "xUnitRevitRunner2024", "xUnitRevitRunner\xUnitRevitRunner2024\xUnitRevitRunner2024.csproj", "{166086EC-696B-48D3-96A1-697C6C3936E7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -100,6 +104,14 @@ Global
 		{54B0C195-2AF8-47EE-805A-07F8FD1E7CAA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{54B0C195-2AF8-47EE-805A-07F8FD1E7CAA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{54B0C195-2AF8-47EE-805A-07F8FD1E7CAA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DE7A457B-8591-486F-B7D5-D609741680CC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DE7A457B-8591-486F-B7D5-D609741680CC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DE7A457B-8591-486F-B7D5-D609741680CC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DE7A457B-8591-486F-B7D5-D609741680CC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{166086EC-696B-48D3-96A1-697C6C3936E7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{166086EC-696B-48D3-96A1-697C6C3936E7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{166086EC-696B-48D3-96A1-697C6C3936E7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{166086EC-696B-48D3-96A1-697C6C3936E7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -118,8 +130,19 @@ Global
 		{72816F5F-F86C-4A84-A4BB-9C05F2CD5320} = {CF685C5E-70E1-40C5-BCFD-1E27695F0364}
 		{97D93392-9484-484F-9F5F-60C5F3D67045} = {CF685C5E-70E1-40C5-BCFD-1E27695F0364}
 		{54B0C195-2AF8-47EE-805A-07F8FD1E7CAA} = {B01105F5-963D-42C3-BFA7-2D26AC375D07}
+		{DE7A457B-8591-486F-B7D5-D609741680CC} = {EDC05463-E574-4FF0-8518-D93D70EC138C}
+		{166086EC-696B-48D3-96A1-697C6C3936E7} = {CF685C5E-70E1-40C5-BCFD-1E27695F0364}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {1CD726E4-6BBA-4FC3-9C57-0981EF1A9475}
+	EndGlobalSection
+	GlobalSection(SharedMSBuildProjectFiles) = preSolution
+		xUnitRevitRunner\xUnitRevitRunnerShared\xUnitRevitRunnerShared.projitems*{166086ec-696b-48d3-96a1-697c6c3936e7}*SharedItemsImports = 5
+		xUnitRevitRunner\xUnitRevitRunnerShared\xUnitRevitRunnerShared.projitems*{2b4f4767-cf26-485b-adb3-751250eb1cdb}*SharedItemsImports = 13
+		xUnitRevitRunner\xUnitRevitRunnerShared\xUnitRevitRunnerShared.projitems*{3782db94-2f99-4449-b727-d5e4172964ad}*SharedItemsImports = 5
+		xUnitRevitRunner\xUnitRevitRunnerShared\xUnitRevitRunnerShared.projitems*{66615756-3c3f-4a46-9c00-d6ba2493b6fa}*SharedItemsImports = 5
+		xUnitRevitRunner\xUnitRevitRunnerShared\xUnitRevitRunnerShared.projitems*{72816f5f-f86c-4a84-a4bb-9c05f2cd5320}*SharedItemsImports = 5
+		xUnitRevitRunner\xUnitRevitRunnerShared\xUnitRevitRunnerShared.projitems*{97d93392-9484-484f-9f5f-60c5f3d67045}*SharedItemsImports = 5
+		xUnitRevitRunner\xUnitRevitRunnerShared\xUnitRevitRunnerShared.projitems*{e3a15534-fb02-4ce2-8126-22e60eb1922e}*SharedItemsImports = 5
 	EndGlobalSection
 EndGlobal

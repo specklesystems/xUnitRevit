@@ -1,0 +1,9 @@
+{
+  "profiles": {
+    "Profile 1": {
+      "commandName": "Executable",
+      "executablePath": "$(ProgramW6432)\\Autodesk\\Revit 2024\\Revit.exe",
+      "remoteDebugEnabled": true
+    }
+  }
+}
